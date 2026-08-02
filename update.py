@@ -1,3 +1,6 @@
+import subprocess
+import shutil
+from pathlib import Path
 import os
 import asyncio
 import shutil
@@ -70,6 +73,14 @@ CHANNEL_ACTIVITY_DAYS = 3
 
 CHANNEL_WORKERS = 5
 
+CONFIG_DIR = Path("configs")
+OUTPUT_DIR = Path("output")
+
+PANTEGNOS_WINDOWS = "pantegnos.exe"
+PANTEGNOS_LINUX = "./pantegnos"
+
+# ==========================
+
 def sanitize_filename(name):
 
     if not name:
@@ -115,6 +126,57 @@ def get_extension(message):
     except Exception:
 
         return None
+        
+def clean_temp_dirs():
+
+    for folder in [CONFIG_DIR, OUTPUT_DIR]:
+
+        if folder.exists():
+            shutil.rmtree(folder)
+
+        folder.mkdir(parents=True, exist_ok=True)
+        
+        
+def run_pantegnos():
+
+    if os.name == "nt":
+        command = [
+            PANTEGNOS_WINDOWS,
+            "-input",
+            str(CONFIG_DIR),
+            "-output",
+            str(OUTPUT_DIR)
+        ]
+
+    else:
+        command = [
+            PANTEGNOS_LINUX,
+            "-input",
+            str(CONFIG_DIR),
+            "-output",
+            str(OUTPUT_DIR)
+        ]
+
+
+    print("Running Pantegnos...")
+
+    result = subprocess.run(
+        command,
+        capture_output=True,
+        text=True
+    )
+
+
+    print(result.stdout)
+
+    if result.stderr:
+        print(result.stderr)
+
+
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"Pantegnos failed with code {result.returncode}"
+        )
 
 async def scan_channel(
     channel_ref,
@@ -315,7 +377,7 @@ async def main():
 
     CONFIG_DIR.mkdir()
 
-
+    run_pantegnos()
 
     results = await collect_files()
 
