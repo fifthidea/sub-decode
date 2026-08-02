@@ -309,7 +309,9 @@ def extract_v2ray_urls():
 
     configs = []
 
-    file_stats = {}
+    url_count = 0
+
+    json_count = 0
 
     for txt in get_output_files():
 
@@ -324,21 +326,19 @@ def extract_v2ray_urls():
 
             continue
 
-        found = []
+        urls = URL_PATTERN.findall(text)
 
-        found.extend(
-            URL_PATTERN.findall(text)
-        )
+        json_configs = extract_json_profiles(text)
 
-        found.extend(
-            extract_json_profiles(text)
-        )
+        url_count += len(urls)
 
-        configs.extend(found)
+        json_count += len(json_configs)
 
-        file_stats[txt.name] = len(found)
+        configs.extend(urls)
 
-    return configs, file_stats
+        configs.extend(json_configs)
+
+    return configs, url_count, json_count
 
 
 
@@ -354,9 +354,9 @@ async def scan_channel(
 
         "files_downloaded": 0,
 
-        "decoded_files": 0,
+        "url_configs": 0,
 
-        "failed_files": 0,
+        "json_configs": 0,
 
         "configs_found": 0,
 
@@ -532,7 +532,7 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs, file_stats = extract_v2ray_urls()
+    v2ray_configs, url_count, json_count = extract_v2ray_urls()
 
     with open(
         "decoded.txt",
@@ -556,25 +556,29 @@ async def main():
     total = 0
 
     for result in results:
+        
+        stats["summary"] = {
+            "channels": len(results),
+            "files_downloaded": total,
+            "url_configs": url_count,
+            "json_configs": json_count,
+            "configs_found": len(v2ray_configs),
+            "runtime_seconds": round(
+                time.time() - start,
+                2
+            )
+        }
+        
         channel = result["channel"]
         
-        prefix = channel.lstrip("-").replace("-100", "")
+        result["stats"]["url_configs"] = url_count
 
-        for filename, count in file_stats.items():
+        result["stats"]["json_configs"] = json_count
 
-            if not filename.startswith(prefix + "_"):
-                continue
-
-            if count > 0:
-
-                result["stats"]["decoded_files"] += 1
-
-            else:
-
-                result["stats"]["failed_files"] += 1
-
-            result["stats"]["configs_found"] += count
-
+        result["stats"]["configs_found"] = (
+            url_count + json_count
+        )
+        
         stats[channel] = result["stats"]
 
         total += len(
