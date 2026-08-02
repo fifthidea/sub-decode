@@ -46,10 +46,10 @@ client = TelegramClient(
 CHANNELS = {
 
     # public username
-    "example_channel": 500,
+    # "example_channel": 500,
 
     # numeric ID
-    -1001234567890: 1000,
+    -1001235816045: 100,
 
 }
 
