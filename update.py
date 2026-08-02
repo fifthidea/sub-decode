@@ -309,11 +309,19 @@ def extract_v2ray_urls():
 
     configs = []
 
-    url_count = 0
-
-    json_count = 0
+    channel_counts = {}
 
     for txt in get_output_files():
+        
+        channel_id = txt.name.split("_", 1)[0]
+
+        stats = channel_counts.setdefault(
+            channel_id,
+            {
+                "url_configs": 0,
+                "json_configs": 0
+            }
+        )
 
         try:
 
@@ -330,15 +338,14 @@ def extract_v2ray_urls():
 
         json_configs = extract_json_profiles(text)
 
-        url_count += len(urls)
-
-        json_count += len(json_configs)
+        stats["url_configs"] += len(urls)
+        stats["json_configs"] += len(json_configs)
 
         configs.extend(urls)
 
         configs.extend(json_configs)
 
-    return configs, url_count, json_count
+    return configs, channel_counts
 
 
 
@@ -532,7 +539,7 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs, url_count, json_count = extract_v2ray_urls()
+    v2ray_configs, channel_counts = extract_v2ray_urls()
 
     with open(
         "decoded.txt",
@@ -554,36 +561,64 @@ async def main():
 
     stats = {}
     total = 0
-
+    
     for result in results:
-        
-        stats["summary"] = {
+    
+        channel = result["channel"]
+    
+        prefix = channel.lstrip("-").replace("-100", "")
+
+        counts = channel_counts.get(
+            prefix,
+            {
+                "url_configs": 0,
+                "json_configs": 0
+            }
+        )
+
+        result["stats"]["url_configs"] = counts["url_configs"]
+        result["stats"]["json_configs"] = counts["json_configs"]
+        result["stats"]["configs_found"] = (
+            counts["url_configs"] +
+            counts["json_configs"]
+        )
+        result["stats"]["configs_found"] = (
+            url_count + json_count
+        )
+    
+        stats[channel] = result["stats"]
+    
+        total += len(result["files"])
+    
+        print(
+            channel,
+            result["stats"]
+        )
+    
+    total_urls = sum(
+        x["url_configs"]
+        for x in channel_counts.values()
+    )
+
+    total_json = sum(
+        x["json_configs"]
+        for x in channel_counts.values()
+    )
+    
+    stats = {
+        "summary": {
             "channels": len(results),
             "files_downloaded": total,
-            "url_configs": url_count,
-            "json_configs": json_count,
+            "url_configs": total_urls,
+            "json_configs": total_json,
             "configs_found": len(v2ray_configs),
             "runtime_seconds": round(
                 time.time() - start,
                 2
             )
-        }
-        
-        channel = result["channel"]
-        
-        result["stats"]["url_configs"] = url_count
-
-        result["stats"]["json_configs"] = json_count
-
-        result["stats"]["configs_found"] = (
-            url_count + json_count
-        )
-        
-        stats[channel] = result["stats"]
-
-        total += len(
-            result["files"]
-        )
+        },
+        **stats
+    }
 
         print(
             channel,
