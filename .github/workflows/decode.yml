@@ -1,0 +1,58 @@
+name: Decode configs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+
+    - name: Make Pantegnos executable
+      run: |
+        chmod +x Pantegnos
+
+
+    - name: Run decoder
+      env:
+        TG_API_ID: ${{ secrets.TG_API_ID }}
+        TG_API_HASH: ${{ secrets.TG_API_HASH }}
+        TG_SESSION: ${{ secrets.TG_SESSION }}
+
+      run: |
+        python update.py
+
+
+    - name: Commit results
+
+      run: |
+
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+
+        git add decoded.txt stats.json
+
+        git commit -m "Update decoded configs" || echo "No changes"
+
+        git push
