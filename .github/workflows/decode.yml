@@ -31,7 +31,7 @@ jobs:
 
     - name: Make Pantegnos executable
       run: |
-        chmod +x Pantegnos
+        chmod +x pantegnos
 
 
     - name: Run decoder
