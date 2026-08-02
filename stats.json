@@ -1,8 +1,8 @@
 {
-    "example_channel": {
-        "files_found": 0,
-        "files_downloaded": 0,
-        "last_file_date": null,
-        "active": false
+    "-1001235816045": {
+        "files_found": 7,
+        "files_downloaded": 7,
+        "last_file_date": "2026-08-02 17:57:50+00:00",
+        "active": true
     }
 }
