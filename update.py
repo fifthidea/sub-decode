@@ -172,9 +172,28 @@ def profile_to_vless(profile):
 
     if profile.get("sni"):
         query["sni"] = profile["sni"]
+        
+    if profile.get("fp"):
+        query["fp"] = profile["fp"]
 
-    if profile.get("insecure"):
-        query["allowInsecure"] = "1"
+    if profile.get("alpn"):
+        query["alpn"] = profile["alpn"]
+
+    if profile.get("flow"):
+        query["flow"] = profile["flow"]
+
+    if profile.get("serviceName"):
+        query["serviceName"] = profile["serviceName"]
+
+    if profile.get("authority"):
+        query["authority"] = profile["authority"]
+
+    if "insecure" in profile:
+        query["allowInsecure"] = (
+            "1"
+            if profile["insecure"]
+            else "0"
+        )
 
     if profile.get("headerType"):
         query["headerType"] = profile["headerType"]
@@ -500,6 +519,16 @@ async def main():
         print(file.name)
 
     v2ray_configs = extract_v2ray_urls()
+
+    with open(
+        "decoded.txt",
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        f.write(
+            "\n".join(v2ray_configs)
+        )
 
     print(
         "Extracted V2Ray URLs:",
