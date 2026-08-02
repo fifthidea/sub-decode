@@ -51,7 +51,7 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
 
-        git add decoded.txt stats.json
+        git add -A
 
         git commit -m "Update decoded configs" || echo "No changes"
 
