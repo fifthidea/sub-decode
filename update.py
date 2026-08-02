@@ -1,6 +1,3 @@
-import subprocess
-import shutil
-from pathlib import Path
 import os
 import asyncio
 import shutil
@@ -46,35 +43,24 @@ client = TelegramClient(
 CHANNELS = {
 
     # public username
-    # "example_channel": 500,
+    "example_channel": 500,
 
     # numeric ID
-    -1001235816045: 100, # t.me/ConfigsHub
+    -1001234567890: 1000,
 
 }
-
 
 SUPPORTED_EXTENSIONS = {
     ".npvt",
     ".nm"
 }
 
-
 CONFIG_DIR = Path("configs")
 OUTPUT_DIR = Path("output")
-
-
-CONFIG_DIR.mkdir(exist_ok=True)
-OUTPUT_DIR.mkdir(exist_ok=True)
-
 
 CHANNEL_ACTIVITY_DAYS = 3
 
-
 CHANNEL_WORKERS = 5
-
-CONFIG_DIR = Path("configs")
-OUTPUT_DIR = Path("output")
 
 PANTEGNOS_WINDOWS = "pantegnos.exe"
 PANTEGNOS_LINUX = "./pantegnos"
@@ -307,22 +293,15 @@ async def scan_channel(
 
 
     except Exception as e:
-
-
         print(
             f"Error {channel_ref}: {e}"
         )
-
-
         return None
         
 async def collect_files():
-
-
     sem = asyncio.Semaphore(
         CHANNEL_WORKERS
     )
-
 
     async def worker(
         channel,
@@ -330,19 +309,14 @@ async def collect_files():
     ):
 
         async with sem:
-
             return await scan_channel(
                 channel,
                 limit
             )
 
-
-
     tasks = []
 
-
     for channel, limit in CHANNELS.items():
-
         tasks.append(
             worker(
                 channel,
@@ -350,11 +324,9 @@ async def collect_files():
             )
         )
 
-
     results = await asyncio.gather(
         *tasks
     )
-
 
     return [
         r for r in results
@@ -362,58 +334,34 @@ async def collect_files():
     ]
 
 async def main():
-
     start = time.time()
 
-
     # clean old files
-
-    if CONFIG_DIR.exists():
-
-        shutil.rmtree(
-            CONFIG_DIR
-        )
-
-
-    CONFIG_DIR.mkdir()
-
+    clean_temp_dirs()
+    results = await collect_files()
     run_pantegnos()
 
-    results = await collect_files()
-
-
-
     stats = {}
-
-
     total = 0
 
-
     for result in results:
-
-
         channel = result["channel"]
 
         stats[channel] = result["stats"]
 
-
         total += len(
             result["files"]
         )
-
 
         print(
             channel,
             result["stats"]
         )
 
-
-
     print(
         "Downloaded files:",
         total
     )
-
 
     with open(
         "stats.json",
@@ -428,13 +376,10 @@ async def main():
             default=str
         )
 
-
     print(
         "Runtime:",
         time.time()-start
     )
-
-
 
 with client:
 
