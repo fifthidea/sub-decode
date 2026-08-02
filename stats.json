@@ -1,11 +1,19 @@
 {
+    "summary": {
+        "channels": 1,
+        "files_downloaded": 0,
+        "url_configs": 235,
+        "json_configs": 23,
+        "configs_found": 258,
+        "runtime_seconds": 14.53
+    },
     "-1001235816045": {
-        "files_found": 41,
-        "files_downloaded": 41,
-        "decoded_files": 0,
-        "failed_files": 0,
-        "configs_found": 0,
-        "last_file_date": "2026-08-02 19:10:28+00:00",
+        "files_found": 39,
+        "files_downloaded": 39,
+        "url_configs": 235,
+        "json_configs": 23,
+        "configs_found": 258,
+        "last_file_date": "2026-08-02 19:12:51+00:00",
         "active": true
     }
 }
