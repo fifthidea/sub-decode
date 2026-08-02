@@ -43,10 +43,10 @@ client = TelegramClient(
 CHANNELS = {
 
     # public username
-    "example_channel": 500,
+    # "example_channel": 500,
 
     # numeric ID
-    -1001234567890: 1000,
+    -1001235816045: 100,  #t.me/ConfigsHub
 
 }
 
@@ -163,6 +163,15 @@ def run_pantegnos():
         raise RuntimeError(
             f"Pantegnos failed with code {result.returncode}"
         )
+        
+def get_output_files():
+
+    if not OUTPUT_DIR.exists():
+        return []
+
+    return sorted(
+        OUTPUT_DIR.glob("*.txt")
+    )
 
 async def scan_channel(
     channel_ref,
@@ -340,6 +349,13 @@ async def main():
     clean_temp_dirs()
     results = await collect_files()
     run_pantegnos()
+    
+    decoded_files = get_output_files()
+
+    print(f"Decoded text files: {len(decoded_files)}")
+
+    for file in decoded_files:
+        print(file.name)
 
     stats = {}
     total = 0
