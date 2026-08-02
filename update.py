@@ -309,6 +309,8 @@ def extract_v2ray_urls():
 
     configs = []
 
+    file_stats = {}
+
     for txt in get_output_files():
 
         try:
@@ -322,15 +324,21 @@ def extract_v2ray_urls():
 
             continue
 
-        configs.extend(
+        found = []
+
+        found.extend(
             URL_PATTERN.findall(text)
         )
 
-        configs.extend(
+        found.extend(
             extract_json_profiles(text)
         )
 
-    return configs
+        configs.extend(found)
+
+        file_stats[txt.name] = len(found)
+
+    return configs, file_stats
 
 
 
@@ -345,6 +353,12 @@ async def scan_channel(
         "files_found": 0,
 
         "files_downloaded": 0,
+
+        "decoded_files": 0,
+
+        "failed_files": 0,
+
+        "configs_found": 0,
 
         "last_file_date": None,
 
@@ -518,7 +532,7 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs = extract_v2ray_urls()
+    v2ray_configs, file_stats = extract_v2ray_urls()
 
     with open(
         "decoded.txt",
@@ -543,6 +557,23 @@ async def main():
 
     for result in results:
         channel = result["channel"]
+        
+        prefix = channel.lstrip("-").replace("-100", "")
+
+        for filename, count in file_stats.items():
+
+            if not filename.startswith(prefix + "_"):
+                continue
+
+            if count > 0:
+
+                result["stats"]["decoded_files"] += 1
+
+            else:
+
+                result["stats"]["failed_files"] += 1
+
+            result["stats"]["configs_found"] += count
 
         stats[channel] = result["stats"]
 
