@@ -68,7 +68,7 @@ CHANNELS = {
     # "example_channel": 500,
 
     # numeric ID
-    -1001235816045: 250,  #t.me/ConfigsHub
+    -1001235816045: 300,  #t.me/ConfigsHub
 
 }
 
@@ -150,24 +150,41 @@ def extract_json_profiles(text):
 
     matches = JSON_ARRAY_PATTERN.findall(text)
 
-    print(
-        f"Found {len(matches)} JSON array(s)"
-    )
-
     for match in matches:
 
         try:
 
             data = json.loads(match)
 
-            print(
-                f"Parsed JSON array with {len(data)} object(s)"
-            )
+        except Exception:
 
-        except Exception as e:
+            continue
+
+
+        for item in data:
+
+            if not isinstance(item, dict):
+                continue
+
+
+            if item.get("type") != "V2RAY":
+                continue
+
+
+            profile = item.get("v2rayProfile")
+
+            if not isinstance(profile, dict):
+                continue
+
+
+            if profile.get("configType") != 5:
+                continue
+
 
             print(
-                f"JSON parse failed: {e}"
+                "Found V2RAY profile:",
+                profile.get("server"),
+                profile.get("serverPort")
             )
 
     return configs
