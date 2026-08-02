@@ -620,10 +620,10 @@ async def main():
         **stats
     }
 
-        print(
-            channel,
-            result["stats"]
-        )
+    print(
+        channel,
+        result["stats"]
+    )
 
     print(
         "Downloaded files:",
