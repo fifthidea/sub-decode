@@ -8,6 +8,7 @@ import tempfile
 import re
 import base64
 from pathlib import Path
+from urllib.parse import urlencode, quote
 from datetime import datetime, timedelta
 
 import pytz
@@ -144,6 +145,51 @@ def clean_temp_dirs():
 
         folder.mkdir(parents=True, exist_ok=True)
         
+def profile_to_vless(profile):
+
+    server = profile.get("server")
+    port = profile.get("serverPort")
+    uuid = profile.get("password")
+
+    if not server or not port or not uuid:
+        return None
+
+    query = {}
+
+    query["encryption"] = "none"
+
+    if profile.get("network"):
+        query["type"] = profile["network"]
+
+    if profile.get("security"):
+        query["security"] = profile["security"]
+
+    if profile.get("host"):
+        query["host"] = profile["host"]
+
+    if profile.get("path"):
+        query["path"] = profile["path"]
+
+    if profile.get("sni"):
+        query["sni"] = profile["sni"]
+
+    if profile.get("insecure"):
+        query["allowInsecure"] = "1"
+
+    if profile.get("headerType"):
+        query["headerType"] = profile["headerType"]
+
+    remark = profile.get(
+        "remarks",
+        ""
+    )
+
+    return (
+        f"vless://{uuid}@{server}:{port}"
+        f"?{urlencode(query)}"
+        f"#{quote(remark)}"
+    )
+        
 def extract_json_profiles(text):
 
     configs = []
@@ -181,11 +227,11 @@ def extract_json_profiles(text):
                 continue
 
 
-            print(
-                "Found V2RAY profile:",
-                profile.get("server"),
-                profile.get("serverPort")
-            )
+            config = profile_to_vless(profile)
+
+            if config:
+
+                configs.append(config)
 
     return configs
         
