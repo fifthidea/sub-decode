@@ -49,7 +49,7 @@ CHANNELS = {
     # "example_channel": 500,
 
     # numeric ID
-    -1001235816045: 100,
+    -1001235816045: 100, # t.me/ConfigsHub
 
 }
 
