@@ -1,8 +1,11 @@
 {
     "-1001235816045": {
-        "files_found": 37,
-        "files_downloaded": 37,
-        "last_file_date": "2026-08-02 18:55:33+00:00",
+        "files_found": 36,
+        "files_downloaded": 36,
+        "decoded_files": 0,
+        "failed_files": 0,
+        "configs_found": 0,
+        "last_file_date": "2026-08-02 18:57:50+00:00",
         "active": true
     }
 }
