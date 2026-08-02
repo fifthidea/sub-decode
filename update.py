@@ -139,6 +139,11 @@ def clean_temp_dirs():
 
         folder.mkdir(parents=True, exist_ok=True)
         
+def extract_json_profiles(text):
+
+    configs = []
+
+    return configs
         
 def run_pantegnos():
 
@@ -170,16 +175,17 @@ def run_pantegnos():
     )
 
 
-    print(result.stdout)
-
-    if result.stderr:
-        print(result.stderr)
-
-
     if result.returncode != 0:
+        print(result.stdout)
+
+        if result.stderr:
+            print(result.stderr)
+
         raise RuntimeError(
-            f"Pantegnos failed with code {result.returncode}"
+            f"Pantegnos failed ({result.returncode})"
         )
+
+    print("Pantegnos finished successfully.")
         
 def get_output_files():
 
@@ -207,11 +213,17 @@ def extract_v2ray_urls():
 
             continue
 
-        matches = URL_PATTERN.findall(text)
+        configs.extend(
+            URL_PATTERN.findall(text)
+        )
 
-        configs.extend(matches)
+        configs.extend(
+            extract_json_profiles(text)
+        )
 
     return configs
+
+
 
 async def scan_channel(
     channel_ref,
