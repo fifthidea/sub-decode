@@ -40,6 +40,23 @@ client = TelegramClient(
 # CONFIG
 # ==========================
 
+SUPPORTED_URL_SCHEMES = (
+    "vmess://",
+    "vless://",
+    "trojan://",
+    "ss://",
+    "ssr://",
+    "hy2://",
+    "hysteria://",
+    "hysteria2://",
+    "tuic://",
+)
+
+URL_PATTERN = re.compile(
+    r"(?:(?:vmess|vless|trojan|ss|ssr|hy2|hysteria2?|tuic)://[^\s\"'<>]+)",
+    re.IGNORECASE
+)
+
 CHANNELS = {
 
     # public username
@@ -172,6 +189,29 @@ def get_output_files():
     return sorted(
         OUTPUT_DIR.glob("*.txt")
     )
+    
+def extract_v2ray_urls():
+
+    configs = []
+
+    for txt in get_output_files():
+
+        try:
+
+            text = txt.read_text(
+                encoding="utf-8",
+                errors="ignore"
+            )
+
+        except Exception:
+
+            continue
+
+        matches = URL_PATTERN.findall(text)
+
+        configs.extend(matches)
+
+    return configs
 
 async def scan_channel(
     channel_ref,
@@ -356,6 +396,16 @@ async def main():
 
     for file in decoded_files:
         print(file.name)
+
+    v2ray_configs = extract_v2ray_urls()
+
+    print(
+        "Extracted V2Ray URLs:",
+        len(v2ray_configs)
+    )
+
+    for config in v2ray_configs[:10]:
+        print(config)
 
     stats = {}
     total = 0
