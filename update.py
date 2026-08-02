@@ -57,6 +57,11 @@ URL_PATTERN = re.compile(
     re.IGNORECASE
 )
 
+JSON_ARRAY_PATTERN = re.compile(
+    r"\[\s*\{.*?\}\s*\]",
+    re.DOTALL
+)
+
 CHANNELS = {
 
     # public username
@@ -142,6 +147,28 @@ def clean_temp_dirs():
 def extract_json_profiles(text):
 
     configs = []
+
+    matches = JSON_ARRAY_PATTERN.findall(text)
+
+    print(
+        f"Found {len(matches)} JSON array(s)"
+    )
+
+    for match in matches:
+
+        try:
+
+            data = json.loads(match)
+
+            print(
+                f"Parsed JSON array with {len(data)} object(s)"
+            )
+
+        except Exception as e:
+
+            print(
+                f"JSON parse failed: {e}"
+            )
 
     return configs
         
