@@ -5,6 +5,7 @@ import time
 import json
 import subprocess
 import re
+import jdatetime
 from pathlib import Path
 from urllib.parse import urlencode, quote
 from datetime import datetime, timedelta
@@ -110,6 +111,27 @@ def sanitize_filename(name):
 
 
     return name
+    
+def format_jalali_tehran(dt):
+
+    tehran = pytz.timezone(
+        "Asia/Tehran"
+    )
+
+    dt_tehran = dt.astimezone(
+        tehran
+    )
+
+    jalali = jdatetime.datetime.fromgregorian(
+        datetime=dt_tehran
+    )
+
+    return (
+        f"{jalali.year:04d}-"
+        f"{jalali.month:02d}-"
+        f"{jalali.day:02d} "
+        f"{dt_tehran.strftime('%H:%M:%S')}"
+    )
     
 def get_extension(message):
 
@@ -648,6 +670,14 @@ async def main():
             counts["json_configs"]
         )
     
+        if result["stats"]["last_file_date"]:
+
+            result["stats"]["last_file_date"] = (
+                format_jalali_tehran(
+                    result["stats"]["last_file_date"]
+                )
+            )
+
         stats[channel] = result["stats"]
     
         total += len(result["files"])
