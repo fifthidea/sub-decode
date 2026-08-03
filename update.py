@@ -7,7 +7,7 @@ import subprocess
 import re
 from pathlib import Path
 from urllib.parse import urlencode, quote
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytz
 
@@ -79,7 +79,6 @@ CONFIG_DIR = Path("configs")
 OUTPUT_DIR = Path("output")
 
 CHANNEL_ACTIVITY_DAYS = 3
-
 CHANNEL_WORKERS = 5
 
 PANTEGNOS_WINDOWS = "pantegnos.exe"
@@ -347,7 +346,19 @@ def extract_v2ray_urls(active_channels):
 
     return configs, channel_counts
 
+def deduplicate_configs(configs):
 
+    seen = set()
+    unique = []
+
+    for config in configs:
+
+        if config not in seen:
+
+            seen.add(config)
+            unique.append(config)
+
+    return unique
 
 async def scan_channel(
     channel_ref,
@@ -375,6 +386,7 @@ async def scan_channel(
 
 
     downloaded = []
+    file_messages = []
 
 
     try:
@@ -397,8 +409,6 @@ async def scan_channel(
 
                 continue
 
-
-
             stats["files_found"] += 1
 
 
@@ -408,49 +418,65 @@ async def scan_channel(
                     msg.date
                 )
 
+            file_messages.append(msg)
 
+        if not stats["last_file_date"]:
+
+            print(
+                f"No config files found in {channel_ref}"
+            )
+
+            return {
+                "channel": str(channel_ref),
+                "files": [],
+                "stats": stats
+            }
+
+        age = (
+            datetime.now(
+                pytz.UTC
+            )
+            -
+            stats["last_file_date"]
+        )
+
+
+        if age <= timedelta(days=CHANNEL_ACTIVITY_DAYS):
+
+            stats["active"] = True
+                
+        if not stats["active"]:
+
+            print(
+                f"Skipping inactive channel {channel_ref}"
+            )
+
+            return {
+                "channel": str(channel_ref),
+                "files": [],
+                "stats": stats
+            }
+            
+        for msg in file_messages:
 
             filename = sanitize_filename(
                 msg.file.name
             )
-
 
             save_path = (
                 CONFIG_DIR /
                 f"{entity.id}_{msg.id}_{filename}"
             )
 
-
             await msg.download_media(
                 file=str(save_path)
             )
-
 
             downloaded.append(
                 str(save_path)
             )
 
-
             stats["files_downloaded"] += 1
-
-
-
-        if stats["last_file_date"]:
-
-            age = (
-                datetime.now(
-                    pytz.UTC
-                )
-                -
-                stats["last_file_date"]
-            )
-
-
-            if age.days <= CHANNEL_ACTIVITY_DAYS:
-
-                stats["active"] = True
-
-
 
         return {
 
@@ -530,7 +556,14 @@ async def main():
     # clean old files
     clean_temp_dirs()
     results = await collect_files()
-    run_pantegnos()
+
+    if any(
+        result["files"]
+        for result in results
+    ):
+        run_pantegnos()
+    else:
+        print("No files to decode")
     
     active_channels = set()
 
@@ -554,6 +587,23 @@ async def main():
 
     v2ray_configs, channel_counts = extract_v2ray_urls(
         active_channels
+    )
+
+    raw_count = len(v2ray_configs)
+
+    v2ray_configs = deduplicate_configs(
+        v2ray_configs
+    )
+
+    duplicates_removed = (
+        raw_count - len(v2ray_configs)
+    )
+
+    after_dedup = len(v2ray_configs)
+
+    print(
+        "Removed duplicates:",
+        raw_count - after_dedup
     )
 
     with open(
@@ -623,6 +673,8 @@ async def main():
             "files_downloaded": total,
             "url_configs": total_urls,
             "json_configs": total_json,
+            "raw_configs_found": raw_count,
+            "duplicates_removed": duplicates_removed,
             "configs_found": len(v2ray_configs),
             "runtime_seconds": round(
                 time.time() - start,
