@@ -3,6 +3,10 @@ name: Decode configs
 on:
   workflow_dispatch:
 
+concurrency:
+  group: decode-configs
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -10,6 +14,7 @@ permissions:
 jobs:
   decode:
     runs-on: ubuntu-latest
+    timeout-minutes: 15 #workflow will be killed if 15 minutes is reached on usage
 
 
     steps:
