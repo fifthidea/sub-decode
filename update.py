@@ -66,8 +66,8 @@ CHANNELS = {
     # "example_channel": 500,
 
     # numeric ID
-    -1001235816045: 300,  #t.me/ConfigsHub
-
+    -1001235816045: 300,    # t.me/ConfigsHub
+    -1003613216743: 300,    # t.me/iranconnecting
 }
 
 SUPPORTED_EXTENSIONS = {
@@ -563,7 +563,7 @@ async def main():
     
         channel = result["channel"]
     
-        prefix = channel.lstrip("-").replace("-100", "")
+        prefix = str(channel).replace("-100", "")
 
         counts = channel_counts.get(
             prefix,
