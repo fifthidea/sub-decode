@@ -4,15 +4,12 @@ import shutil
 import time
 import json
 import subprocess
-import tempfile
 import re
-import base64
 from pathlib import Path
 from urllib.parse import urlencode, quote
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import pytz
-import jdatetime
 
 from telethon import TelegramClient
 from telethon.sessions import StringSession
@@ -582,9 +579,6 @@ async def main():
             counts["url_configs"] +
             counts["json_configs"]
         )
-        result["stats"]["configs_found"] = (
-            url_count + json_count
-        )
     
         stats[channel] = result["stats"]
     
@@ -619,11 +613,6 @@ async def main():
         },
         **stats
     }
-
-    print(
-        channel,
-        result["stats"]
-    )
 
     print(
         "Downloaded files:",
