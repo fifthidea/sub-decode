@@ -38,17 +38,17 @@ client = TelegramClient(
 # CONFIG
 # ==========================
 
-SUPPORTED_URL_SCHEMES = (
-    "vmess://",
-    "vless://",
-    "trojan://",
-    "ss://",
-    "ssr://",
-    "hy2://",
-    "hysteria://",
-    "hysteria2://",
-    "tuic://",
-)
+#SUPPORTED_URL_SCHEMES = (
+#    "vmess://",
+#    "vless://",
+#    "trojan://",
+#    "ss://",
+#    "ssr://",
+#    "hy2://",
+#    "hysteria://",
+#    "hysteria2://",
+#    "tuic://",
+#)
 
 URL_PATTERN = re.compile(
     r"(?:(?:vmess|vless|trojan|ss|ssr|hy2|hysteria2?|tuic)://[^\s\"'<>]+)",
@@ -302,7 +302,7 @@ def get_output_files():
         OUTPUT_DIR.glob("*.txt")
     )
     
-def extract_v2ray_urls():
+def extract_v2ray_urls(active_channels):
 
     configs = []
 
@@ -311,6 +311,9 @@ def extract_v2ray_urls():
     for txt in get_output_files():
         
         channel_id = txt.name.split("_", 1)[0]
+        
+        if channel_id not in active_channels:
+            continue
 
         stats = channel_counts.setdefault(
             channel_id,
@@ -529,6 +532,19 @@ async def main():
     results = await collect_files()
     run_pantegnos()
     
+    active_channels = set()
+
+    for result in results:
+
+        if result["stats"]["active"]:
+
+            channel_id = (
+                str(result["channel"])
+                .replace("-100", "")
+            )
+
+            active_channels.add(channel_id)
+    
     decoded_files = get_output_files()
 
     print(f"Decoded text files: {len(decoded_files)}")
@@ -536,7 +552,9 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs, channel_counts = extract_v2ray_urls()
+    v2ray_configs, channel_counts = extract_v2ray_urls(
+        active_channels
+    )
 
     with open(
         "decoded.txt",
