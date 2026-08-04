@@ -854,16 +854,16 @@ def extract_json_profiles(text):
                 configs.append(config)
                 
                 if config_type == 5:
-                    json_stats["json_vless"] += 1
+                    stats["json_vless"] += 1
 
                 elif config_type == 6:
-                    json_stats["json_trojan"] += 1
+                    stats["json_trojan"] += 1
 
                 elif config_type == 1:
-                    json_stats["json_vmess"] += 1
+                    stats["json_vmess"] += 1
 
                 elif config_type == 3:
-                    json_stats["json_ss"] += 1
+                    stats["json_ss"] += 1
 
 
     return configs
