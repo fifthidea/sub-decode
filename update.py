@@ -181,18 +181,27 @@ def normalize_security(value):
 
     value = str(value).lower()
 
-    mapping = {
-        "reality": "reality",
-        "tls": "tls",
-        "xtls": "xtls",
-        "none": "none"
-    }
 
-    return mapping.get(
-        value,
-        value
-    )
+    if "reality" in value:
+        return "reality"
 
+
+    if "tls" in value:
+        return "tls"
+
+
+    if "xtls" in value:
+        return "xtls"
+
+
+    if value in (
+        "none",
+        "false",
+        "0"
+    ):
+        return "none"
+
+    return value
 
 def normalize_network(value):
 
@@ -263,13 +272,81 @@ def build_query(profile):
     ]
 
 
-    for field in fields:
+    field_aliases = {
 
-        value = profile.get(field)
+        "host": [
+            "host",
+            "hostName"
+        ],
+
+        "path": [
+            "path",
+            "wsPath"
+        ],
+
+        "sni": [
+            "sni",
+            "serverName"
+        ],
+
+        "fp": [
+            "fp",
+            "fingerprint",
+            "clientFingerprint"
+        ],
+
+        "alpn": [
+            "alpn"
+        ],
+
+        "flow": [
+            "flow"
+        ],
+
+        "serviceName": [
+            "serviceName",
+            "grpcServiceName"
+        ],
+
+        "authority": [
+            "authority"
+        ],
+
+        "headerType": [
+            "headerType"
+        ],
+
+        "pbk": [
+            "pbk",
+            "publicKey",
+            "realityPublicKey"
+        ],
+
+        "sid": [
+            "sid",
+            "shortId",
+            "shortID"
+        ],
+
+        "spx": [
+            "spx",
+            "spiderX",
+            "spider"
+        ]
+
+    }
+
+
+    for output_name, aliases in field_aliases.items():
+
+        value = get_value(
+            profile,
+            *aliases
+        )
 
         if value:
 
-            query[field] = value
+            query[output_name] = value
 
 
     if "insecure" in profile:
@@ -282,7 +359,67 @@ def build_query(profile):
 
 
     return query
-        
+
+def detect_protocol(profile):
+
+    value = get_value(
+        profile,
+        "protocol",
+        "type",
+        "app",
+        "name"
+    )
+
+
+    if value:
+
+        value = str(value).lower()
+
+        if "vless" in value:
+            return "vless"
+
+        if "trojan" in value:
+            return "trojan"
+
+        if "vmess" in value:
+            return "vmess"
+
+        if value in ("ss", "shadowsocks"):
+            return "ss"
+
+        if "tuic" in value:
+            return "tuic"
+
+        if "hysteria" in value or value.startswith("hy"):
+            return "hysteria2"
+
+    # fallback detection
+
+    if get_value(
+        profile,
+        "uuid",
+        "id"
+    ) and get_value(
+        profile,
+        "security",
+        "reality",
+        "realityPublicKey"
+    ):
+        return "vless"
+
+
+    if get_value(
+        profile,
+        "password"
+    ) and not get_value(
+        profile,
+        "uuid"
+    ):
+        return "trojan"
+
+
+    return "vless"
+
 def profile_to_vless(profile):
 
     server = get_value(
@@ -401,9 +538,21 @@ def extract_json_profiles(text):
             if profile.get("configType") != 5:
                 continue
 
-            config = profile_to_vless(
-                profile
-            )
+            protocol = detect_protocol(profile)
+
+
+            if protocol == "vless":
+
+                config = profile_to_vless(profile)
+
+            else:
+                
+                print(
+                    "Unsupported protocol:",
+                    protocol
+                )
+
+                config = None
 
 
             if config:
