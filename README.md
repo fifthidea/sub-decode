@@ -1,18 +1,20 @@
-# V2ray subscriptions generator from encrypted config files
+# V2ray subscriptions generator from encrypted config files (NPVT, NM, etc)
 
 Workflow runs, Telegram channels scanned and files get downloaded using Telethon, files get decoded using Pantegnos and v2ray configs get written into `decoded.txt` and `parsed.txt`
 
 ## Decoded files
 
-**`decoded.txt`**: Converted raw v2ray configs + v2ray urls
+**`decoded.txt`**:     Converted raw JSON configs + v2ray URLs
 
-**`parsed.txt`**: only Converted JSON raw v2ray configs.
+**`parsed.txt`**: only Converted raw JSON configs.
 
-> `stats.json` contains
+also both files get deduplicated before commit to avoid multiple same configs.
+
+> `stats.json` contains statistics.
 
 ## Configuration
 
-Channels and their message scan limits are configured in `update.py`
+Channels and their message scan limits are configured in `update.py` (required)
 
 ## Supported files
 
@@ -20,9 +22,9 @@ File format to download and decode is configure in `update.py`
 
 Pantegnos does the decoding. so whatever Pantegnos supprts can be included.
 
-Decoding will work as long as the decoded configs have the same encryption pattern that Pantegnos can detect.
+Decoding will work as long as the config files have the same encryption pattern that Pantegnos can detect and decode.
 
-if App devs update their encryption, decoding will most probably fail.
+If App devs update their encryption, decoding will most probably fail.
 
 ## Required Workflow Secrets
 
@@ -32,8 +34,22 @@ if App devs update their encryption, decoding will most probably fail.
 
 `TG_API_ID`
 
-If not exist Telethon will fail.
+If not exist, Telethon will fail.
+
+## Want your own?
+
+1. Fork repo
+
+2. Configure `update.py`
+
+3. Set required Secrets
+
+4. Run workflow
+
+5. update pantegnos binary once in a while if FrontierTM pushes updates. (optional but preferred)
+
+> Note: You can use cron trigger to for triggering workflow automatically every x minutes. but i'm not gonna explain it here. ask AI. :/
 
 ## Credits
 
-**FrontierTM** for **Pantegnos** decoding tool.
+**FrontierTM** for their awesome **Pantegnos** decoding tool. [here](https://github.com/FrontierTM/Pantegnos)
