@@ -404,6 +404,51 @@ def detect_protocol(profile):
 
     return "vless"
 
+def profile_to_trojan(profile):
+
+    server = get_value(
+        profile,
+        "server",
+        "address",
+        "host"
+    )
+
+    port = get_value(
+        profile,
+        "serverPort",
+        "port"
+    )
+
+    password = get_value(
+        profile,
+        "password",
+        "uuid",
+        "id"
+    )
+
+
+    if not server or not port or not password:
+        return None
+
+
+    query = build_query(profile)
+
+
+    remark = get_value(
+        profile,
+        "remarks",
+        "name",
+        "ps",
+        default=""
+    )
+
+
+    return (
+        f"trojan://{password}@{server}:{port}"
+        f"?{urlencode(query)}"
+        f"#{quote(str(remark))}"
+    )
+
 def profile_to_vless(profile):
 
     server = get_value(
@@ -626,6 +671,10 @@ def extract_json_profiles(text):
             if protocol == "vless":
 
                 config = profile_to_vless(profile)
+                
+            elif protocol == "trojan":
+
+                config = profile_to_trojan(profile)
 
             else:
                 
