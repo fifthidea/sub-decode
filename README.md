@@ -10,7 +10,7 @@ Workflow runs, Telegram channels scanned and files get downloaded using Telethon
 
 also both files get deduplicated before commit to avoid multiple same configs.
 
-> `stats.json` contains statistics.
+> `stats.json` contains statistics. (well no sh#t!)
 
 ## Configuration
 
