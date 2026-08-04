@@ -345,65 +345,65 @@ def build_query(profile):
 
     return query
 
-def detect_protocol(profile):
-
-    value = get_value(
-        profile,
-        "protocol",
-        "type",
-        "app",
-        "name"
-    )
-
-
-    if value:
-
-        value = str(value).lower()
-
-        if "vless" in value:
-            return "vless"
-
-        if "trojan" in value:
-            return "trojan"
-
-        if "vmess" in value:
-            return "vmess"
-
-        if value in ("ss", "shadowsocks"):
-            return "ss"
-
-        if "tuic" in value:
-            return "tuic"
-
-        if "hysteria" in value or value.startswith("hy"):
-            return "hysteria2"
-
-    # fallback detection
-
-    if get_value(
-        profile,
-        "uuid",
-        "id"
-    ) and get_value(
-        profile,
-        "security",
-        "reality",
-        "realityPublicKey"
-    ):
-        return "vless"
-
-
-    if get_value(
-        profile,
-        "password"
-    ) and not get_value(
-        profile,
-        "uuid"
-    ):
-        return "trojan"
-
-
-    return "vless"
+#def detect_protocol(profile):
+#
+#    value = get_value(
+#        profile,
+#        "protocol",
+#        "type",
+#        "app",
+#        "name"
+#    )
+#
+#
+#    if value:
+#
+#        value = str(value).lower()
+#
+#        if "vless" in value:
+#            return "vless"
+#
+#        if "trojan" in value:
+#            return "trojan"
+#
+#        if "vmess" in value:
+#            return "vmess"
+#
+#        if value in ("ss", "shadowsocks"):
+#            return "ss"
+#
+#        if "tuic" in value:
+#            return "tuic"
+#
+#        if "hysteria" in value or value.startswith("hy"):
+#            return "hysteria2"
+#
+#    # fallback detection
+#
+#    if get_value(
+#        profile,
+#        "uuid",
+#        "id"
+#    ) and get_value(
+#        profile,
+#        "security",
+#        "reality",
+#        "realityPublicKey"
+#    ):
+#        return "vless"
+#
+#
+#    if get_value(
+#        profile,
+#        "password"
+#    ) and not get_value(
+#        profile,
+#        "uuid"
+#    ):
+#        return "trojan"
+#
+#
+#    return "vless"
 
 def profile_to_trojan(profile):
 
@@ -922,6 +922,7 @@ def get_output_files():
 def extract_v2ray_urls(active_channels):
 
     configs = []
+    parsed_configs = []
 
     channel_counts = {}
 
@@ -973,10 +974,10 @@ def extract_v2ray_urls(active_channels):
         stats["json_configs"] += len(json_configs)
 
         configs.extend(urls)
-
         configs.extend(json_configs)
+        parsed_configs.extend(json_configs)
 
-    return configs, channel_counts, json_stats
+    return configs, parsed_configs, channel_counts, json_stats
 
 def deduplicate_configs(configs):
 
@@ -1007,16 +1008,6 @@ async def scan_channel(
         "url_configs": 0,
 
         "json_configs": 0,
-        
-        #"json_vless": 0,
-        
-        #"json_trojan": 0,
-        
-        #"json_vmess": 0,
-        
-        #"json_ss": 0,
-        
-        #"json_unsupported": 0,
 
         "configs_found": 0,
 
@@ -1227,7 +1218,7 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs, channel_counts, json_stats = extract_v2ray_urls(
+    v2ray_configs, parsed_configs, channel_counts, json_stats = extract_v2ray_urls(
         active_channels
     )
 
@@ -1256,6 +1247,16 @@ async def main():
 
         f.write(
             "\n".join(v2ray_configs)
+        )
+        
+    with open(
+        "parsed.txt",
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        f.write(
+            "\n".join(parsed_configs)
         )
 
     print(
