@@ -256,22 +256,6 @@ def build_query(profile):
         query["security"] = security
 
 
-    fields = [
-        "host",
-        "path",
-        "sni",
-        "fp",
-        "alpn",
-        "flow",
-        "serviceName",
-        "authority",
-        "headerType",
-        "pbk",
-        "sid",
-        "spx"
-    ]
-
-
     field_aliases = {
 
         "host": [
@@ -494,9 +478,17 @@ def extract_json_profiles(text):
 
     configs = []
 
+    print(
+        "Testing JSON extraction. Length:",
+        len(text)
+    )
 
     json_objects = extract_json_objects(text)
-
+    
+    print(
+        "JSON objects found:",
+        len(json_objects)
+    )
 
     for data in json_objects:
 
@@ -523,7 +515,13 @@ def extract_json_profiles(text):
                 continue
 
 
-            if item.get("type") != "V2RAY":
+           if item.get("type") != "V2RAY":
+
+                print(
+                    "JSON object found but type mismatch:",
+                    item.get("type")
+                )
+
                 continue
 
 
@@ -536,6 +534,12 @@ def extract_json_profiles(text):
                 continue
                 
             if profile.get("configType") != 5:
+
+                print(
+                    "Skipping configType:",
+                    profile.get("configType")
+                )
+
                 continue
 
             protocol = detect_protocol(profile)
