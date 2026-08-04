@@ -515,7 +515,7 @@ def extract_json_profiles(text):
                 continue
 
 
-           if item.get("type") != "V2RAY":
+            if item.get("type") != "V2RAY":
 
                 print(
                     "JSON object found but type mismatch:",
