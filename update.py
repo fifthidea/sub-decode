@@ -73,7 +73,11 @@ CHANNELS = {
 
 SUPPORTED_EXTENSIONS = {
     ".npvt",
-    ".nm"
+    ".nm",
+    ".netmod",
+    ".dark",
+    ".ehi",
+    ".hat"
 }
 
 CONFIG_DIR = Path("configs")
