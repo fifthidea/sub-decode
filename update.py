@@ -665,26 +665,7 @@ def extract_json_profiles(text):
 
                 continue
 
-            protocol = detect_protocol(profile)
-
-
-            if protocol == "vless":
-
-                config = profile_to_vless(profile)
-                
-            elif protocol == "trojan":
-
-                config = profile_to_trojan(profile)
-
-            else:
-                
-                print(
-                    "Unsupported protocol:",
-                    protocol
-                )
-
-                config = None
-
+            config = profile_to_vless(profile)
 
             if config:
 
