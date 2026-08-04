@@ -1,4 +1,4 @@
-# V2ray subscriptions generator but from encrypted config files (NPVT, NM, etc)
+# V2ray subscription generator but from encrypted config files (NPVT, NM, etc)
 
 Workflow runs, Telegram channels scanned and files get downloaded using Telethon, files get decoded using `pantegnos` and v2ray configs get written into `decoded.txt` and `parsed.txt`
 
@@ -18,7 +18,7 @@ Channels and their message scan limits are configured in `update.py`. (`CHANNELS
 
 ## Supported files
 
-File format to download and decode is configure in `update.py`. (`SUPPORTED_EXTENSIONS = {}` at line 74)
+File format to download and decode is configured in `update.py`. (`SUPPORTED_EXTENSIONS = {}` at line 74)
 
 Pantegnos does the decoding. so whatever Pantegnos supprts can be included (.npvt, .netmod, .hat, .ehi, .dark). Slipnet and Happ is also supported but these are not files, they are links. So if you need decoding for Slipnet and Happ, you need to implement them yourself.
 
