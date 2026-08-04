@@ -34,7 +34,9 @@ If App devs update their encryption, decoding will most probably fail.
 
 `TG_API_ID`
 
-If not exist, Telethon will fail.
+If not exist, Telethon will fail. 
+
+How to get those secret values? ask AI :/
 
 ## Want your own?
 
