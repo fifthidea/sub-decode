@@ -1008,15 +1008,15 @@ async def scan_channel(
 
         "json_configs": 0,
         
-        "json_vless": 0,
+        #"json_vless": 0,
         
-        "json_trojan": 0,
+        #"json_trojan": 0,
         
-        "json_vmess": 0,
+        #"json_vmess": 0,
         
-        "json_ss": 0,
+        #"json_ss": 0,
         
-        "json_unsupported": 0,
+        #"json_unsupported": 0,
 
         "configs_found": 0,
 
