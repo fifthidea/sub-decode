@@ -50,7 +50,7 @@ How to get those secret values? ask AI. :/
 
 5. update pantegnos binary once in a while if FrontierTM pushes updates. (optional but preferred)
 
-> Note: You can use cron trigger to for triggering workflow automatically every x minutes. but i'm not gonna explain it here. ask AI. :/
+> Note: You can use cron trigger for triggering workflow automatically every x minutes. but i'm not gonna explain it here. ask AI. :/
 
 ## Credits
 
