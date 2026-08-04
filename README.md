@@ -14,13 +14,13 @@ also both files get deduplicated before commit to avoid multiple same configs.
 
 ## Configuration
 
-Channels and their message scan limits are configured in `update.py` (required)
+Channels and their message scan limits are configured in `update.py`. (`CHANNELS = {}` at line 64)  (required)
 
 ## Supported files
 
-File format to download and decode is configure in `update.py`
+File format to download and decode is configure in `update.py`. (`SUPPORTED_EXTENSIONS = {}` at line 74)
 
-Pantegnos does the decoding. so whatever Pantegnos supprts can be included.
+Pantegnos does the decoding. so whatever Pantegnos supprts can be included (.npvt, .netmod, .hat, .ehi, .dark, .hat). Slipnet and Happ is also supported but these are not files, they are links. So if you need decoding for Slipnet and Happ, you need to implement them yourself.
 
 Decoding will work as long as the config files have the same encryption pattern that Pantegnos can detect and decode.
 
