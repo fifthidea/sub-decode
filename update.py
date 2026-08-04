@@ -1005,7 +1005,7 @@ async def scan_channel(
         
         "json_ss": 0,
         
-        "json_unsupported": 0
+        "json_unsupported": 0,
 
         "configs_found": 0,
 
