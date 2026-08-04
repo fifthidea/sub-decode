@@ -36,7 +36,7 @@ If App devs update their encryption, decoding will most probably fail.
 
 If not exist, Telethon will fail. 
 
-How to get those secret values? ask AI :/
+How to get those secret values? ask AI. :/
 
 ## Want your own?
 
