@@ -164,75 +164,47 @@ def clean_temp_dirs():
         
 def profile_to_vless(profile):
 
-    server = profile.get("server")
-    port = profile.get("serverPort")
-    uuid = profile.get("password")
+    server = get_value(
+        profile,
+        "server",
+        "address",
+        "host"
+    )
+
+    port = get_value(
+        profile,
+        "serverPort",
+        "port"
+    )
+
+    uuid = get_value(
+        profile,
+        "password",
+        "uuid",
+        "id"
+    )
+
 
     if not server or not port or not uuid:
         return None
 
-    query = {}
 
-    query["encryption"] = "none"
+    query = build_query(profile)
 
-    if profile.get("network"):
-        query["type"] = profile["network"]
 
-    if profile.get("security"):
-        query["security"] = profile["security"]
-
-    if profile.get("host"):
-        query["host"] = profile["host"]
-
-    if profile.get("path"):
-        query["path"] = profile["path"]
-
-    if profile.get("sni"):
-        query["sni"] = profile["sni"]
-        
-    if profile.get("fp"):
-        query["fp"] = profile["fp"]
-
-    if profile.get("alpn"):
-        query["alpn"] = profile["alpn"]
-
-    if profile.get("flow"):
-        query["flow"] = profile["flow"]
-
-    if profile.get("publicKey"):
-        query["pbk"] = profile["publicKey"]
-
-    if profile.get("shortId"):
-        query["sid"] = profile["shortId"]
-
-    if profile.get("spiderX"):
-        query["spx"] = profile["spiderX"]
-
-    if profile.get("serviceName"):
-        query["serviceName"] = profile["serviceName"]
-
-    if profile.get("authority"):
-        query["authority"] = profile["authority"]
-
-    if "insecure" in profile:
-        query["allowInsecure"] = (
-            "1"
-            if profile["insecure"]
-            else "0"
-        )
-
-    if profile.get("headerType"):
-        query["headerType"] = profile["headerType"]
-
-    remark = profile.get(
+    remark = get_value(
+        profile,
         "remarks",
-        ""
+        "name",
+        "ps",
+        default=""
     )
+
 
     return (
         f"vless://{uuid}@{server}:{port}"
         f"?{urlencode(query)}"
-        f"#{quote(remark)}"
+        f"#{quote(str(remark))}"
     )
         
 def extract_json_objects(text):
