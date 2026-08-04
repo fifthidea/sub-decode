@@ -98,3 +98,4 @@ vless://XpnTeam-2@140.248.186.45:443?encryption=none&type=ws&security=tls&host=A
 vless://f2ed3efd-7300-4ac4-860b-86c89da11b75@5.252.26.156:2083?encryption=none&type=tcp&host=icloud.com&path=%2F&headerType=http&allowInsecure=1#MXGRiD-%E2%9A%A1%EF%B8%8Fjoin
 vless://f2ed3efd-7300-4ac4-860b-86c89da11b75@5.252.26.156:8443?encryption=none&type=tcp&security=reality&sni=icloud.com&flow=xtls-rprx-vision&pbk=88P7fof76Zu9GEd2AVdy1_wuEXDNjSR8nvTqLfxdp0Q&sid=07&spx=%2F052a58d0ec350cc&allowInsecure=1#MXGRiD-%E2%9A%A1%EF%B8%8Fjoin
 vless://f2ed3efd-7300-4ac4-860b-86c89da11b75@162.159.38.119:443?encryption=none&type=ws&security=tls&host=telegram.mxgrid.xyz&path=%2F----MXGRiD----&sni=telegram.mxgrid.xyz&allowInsecure=1#MXGRiD-%E2%9A%A1%EF%B8%8Fjoin
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0WG0xclVXWG5TcFRLdnZG@20.234.89.202:443#%D8%AF%D9%86%DB%8C%D8%A7%DB%8C%20%D8%A8%D8%AF%D9%88%D9%86%20%D9%85%D8%AD%D8%AF%D9%88%D8%AF%DB%8C%D8%AA%E2%99%A8%EF%B8%8F%0A%7B%40V2FilterNet%7D
