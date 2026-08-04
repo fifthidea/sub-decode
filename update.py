@@ -8,6 +8,7 @@ import re
 import jdatetime
 from pathlib import Path
 from urllib.parse import urlencode, quote
+import base64
 from datetime import datetime, timedelta
 
 import pytz
@@ -464,7 +465,7 @@ def profile_to_vless(profile):
         "port"
     )
 
-    uuid = get_value(
+    user_id = get_value(
         profile,
         "password",
         "uuid",
@@ -489,11 +490,161 @@ def profile_to_vless(profile):
 
 
     return (
-        f"vless://{uuid}@{server}:{port}"
+        f"vless://{user_id}@{server}:{port}"
         f"?{urlencode(query)}"
         f"#{quote(str(remark))}"
     )
-        
+
+def profile_to_vmess(profile):
+
+    server = get_value(
+        profile,
+        "server",
+        "address",
+        "host"
+    )
+
+    port = get_value(
+        profile,
+        "serverPort",
+        "port"
+    )
+
+    user_id = get_value(
+        profile,
+        "user_id",
+        "uuid",
+        "id"
+    )
+
+
+    if not server or not port or not user_id:
+        return None
+
+
+    vmess_config = {
+        "v": "2",
+        "ps": get_value(
+            profile,
+            "remarks",
+            "name",
+            "ps",
+            default=""
+        ),
+        "add": server,
+        "port": str(port),
+        "id": user_id,
+        "aid": "0",
+        "scy": "auto",
+        "net": normalize_network(
+            get_value(
+                profile,
+                "network",
+                "net",
+                "type"
+            )
+        ) or "tcp",
+        "type": "none",
+        "host": get_value(
+            profile,
+            "host",
+            "hostName",
+            default=""
+        ),
+        "path": get_value(
+            profile,
+            "path",
+            "wsPath",
+            default=""
+        ),
+        "tls": ""
+    }
+
+
+    security = normalize_security(
+        get_value(
+            profile,
+            "security",
+            "tls"
+        )
+    )
+
+
+    if security in (
+        "tls",
+        "reality"
+    ):
+        vmess_config["tls"] = "tls"
+
+
+    raw = json.dumps(
+        vmess_config,
+        separators=(",", ":")
+    )
+
+
+    encoded = base64.b64encode(
+        raw.encode()
+    ).decode()
+
+
+    return (
+        f"vmess://{encoded}"
+    )
+
+def profile_to_ss(profile):
+
+    server = get_value(
+        profile,
+        "server",
+        "address",
+        "host"
+    )
+
+    port = get_value(
+        profile,
+        "serverPort",
+        "port"
+    )
+
+    password = get_value(
+        profile,
+        "password"
+    )
+
+
+    method = get_value(
+        profile,
+        "method",
+        "cipher",
+        "encryption",
+        default="aes-256-gcm"
+    )
+
+
+    if not server or not port or not password:
+        return None
+
+
+    userinfo = base64.b64encode(
+        f"{method}:{password}".encode()
+    ).decode().rstrip("=")
+
+
+    remark = get_value(
+        profile,
+        "remarks",
+        "name",
+        "ps",
+        default=""
+    )
+
+
+    return (
+        f"ss://{userinfo}@{server}:{port}"
+        f"#{quote(str(remark))}"
+    )
+
 def extract_json_objects(text):
 
     objects = []
@@ -656,20 +807,63 @@ def extract_json_profiles(text):
             if not isinstance(profile, dict):
                 continue
                 
-            if profile.get("configType") != 5:
+            config_type = profile.get(
+                "configType"
+            )
+
+
+            if config_type == 5:
+
+                config = profile_to_vless(
+                    profile
+                )
+
+
+            elif config_type == 6:
+
+                config = profile_to_trojan(
+                    profile
+                )
+
+
+            elif config_type == 1:
+
+                config = profile_to_vmess(
+                    profile
+                )
+
+
+            elif config_type == 3:
+
+                config = profile_to_ss(
+                    profile
+                )
+
+
+            else:
 
                 print(
                     "Skipping configType:",
-                    profile.get("configType")
+                    config_type
                 )
 
                 continue
 
-            config = profile_to_vless(profile)
-
             if config:
 
                 configs.append(config)
+                
+                if config_type == 5:
+                    json_stats["json_vless"] += 1
+
+                elif config_type == 6:
+                    json_stats["json_trojan"] += 1
+
+                elif config_type == 1:
+                    json_stats["json_vmess"] += 1
+
+                elif config_type == 3:
+                    json_stats["json_ss"] += 1
 
 
     return configs
@@ -802,6 +996,16 @@ async def scan_channel(
         "url_configs": 0,
 
         "json_configs": 0,
+        
+        "json_vless": 0,
+        
+        "json_trojan": 0,
+        
+        "json_vmess": 0,
+        
+        "json_ss": 0,
+        
+        "json_unsupported": 0
 
         "configs_found": 0,
 
