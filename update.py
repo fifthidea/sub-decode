@@ -565,6 +565,11 @@ def extract_json_profiles(text):
 
     for data in json_objects:
 
+        print("DEBUG JSON TYPE:", type(data))
+
+        if isinstance(data, dict):
+            print("DEBUG KEYS:", list(data.keys())[:20])
+
 
         if isinstance(data, list):
 
@@ -591,7 +596,7 @@ def extract_json_profiles(text):
             if item.get("type") != "V2RAY":
 
                 print(
-                    "JSON object found but type mismatch:",
+                    "DEBUG SKIPPED TYPE:",
                     item.get("type")
                 )
 
