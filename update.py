@@ -57,9 +57,9 @@ URL_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-JSON_START_PATTERN = re.compile(
-    r"[\{\[]"
-)
+#JSON_START_PATTERN = re.compile(
+#    r"[\{\[]"
+#)
 
 CHANNELS = {
 
@@ -317,7 +317,11 @@ def build_query(profile):
             "spx",
             "spiderX",
             "spider"
-        ]
+        ],
+        
+        "pqv": [
+            "pqv"
+        ],
 
     }
 
@@ -345,66 +349,6 @@ def build_query(profile):
 
     return query
 
-#def detect_protocol(profile):
-#
-#    value = get_value(
-#        profile,
-#        "protocol",
-#        "type",
-#        "app",
-#        "name"
-#    )
-#
-#
-#    if value:
-#
-#        value = str(value).lower()
-#
-#        if "vless" in value:
-#            return "vless"
-#
-#        if "trojan" in value:
-#            return "trojan"
-#
-#        if "vmess" in value:
-#            return "vmess"
-#
-#        if value in ("ss", "shadowsocks"):
-#            return "ss"
-#
-#        if "tuic" in value:
-#            return "tuic"
-#
-#        if "hysteria" in value or value.startswith("hy"):
-#            return "hysteria2"
-#
-#    # fallback detection
-#
-#    if get_value(
-#        profile,
-#        "uuid",
-#        "id"
-#    ) and get_value(
-#        profile,
-#        "security",
-#        "reality",
-#        "realityPublicKey"
-#    ):
-#        return "vless"
-#
-#
-#    if get_value(
-#        profile,
-#        "password"
-#    ) and not get_value(
-#        profile,
-#        "uuid"
-#    ):
-#        return "trojan"
-#
-#
-#    return "vless"
-
 def profile_to_trojan(profile):
 
     server = get_value(
@@ -422,9 +366,9 @@ def profile_to_trojan(profile):
 
     password = get_value(
         profile,
-        "password",
-        "uuid",
-        "id"
+        "password"
+        #"uuid",
+        #"id"
     )
 
 
@@ -467,9 +411,10 @@ def profile_to_vless(profile):
 
     user_id = get_value(
         profile,
-        "password",
+        "user_id",
         "uuid",
-        "id"
+        "id",
+        "password"
     )
 
 
@@ -648,8 +593,6 @@ def profile_to_ss(profile):
 def extract_json_objects(text):
 
     objects = []
-
-    decoder = json.JSONDecoder()
 
     tried = set()
 
@@ -841,6 +784,8 @@ def extract_json_profiles(text, json_stats):
 
 
             else:
+
+                json_stats["json_unsupported"] += 1
 
                 print(
                     "Skipping configType:",
@@ -1226,6 +1171,10 @@ async def main():
 
     v2ray_configs = deduplicate_configs(
         v2ray_configs
+    )
+
+    parsed_configs = deduplicate_configs(
+        parsed_configs
     )
 
     duplicates_removed = (
