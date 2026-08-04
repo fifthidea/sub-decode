@@ -162,6 +162,127 @@ def clean_temp_dirs():
 
         folder.mkdir(parents=True, exist_ok=True)
         
+def get_value(data, *keys, default=None):
+
+    for key in keys:
+
+        value = data.get(key)
+
+        if value is not None and value != "":
+            return value
+
+    return default
+
+
+def normalize_security(value):
+
+    if not value:
+        return None
+
+    value = str(value).lower()
+
+    mapping = {
+        "reality": "reality",
+        "tls": "tls",
+        "xtls": "xtls",
+        "none": "none"
+    }
+
+    return mapping.get(
+        value,
+        value
+    )
+
+
+def normalize_network(value):
+
+    if not value:
+        return None
+
+    value = str(value).lower()
+
+    mapping = {
+        "ws": "ws",
+        "websocket": "ws",
+        "grpc": "grpc",
+        "tcp": "tcp",
+        "http": "http"
+    }
+
+    return mapping.get(
+        value,
+        value
+    )
+
+
+def build_query(profile):
+
+    query = {}
+
+    query["encryption"] = "none"
+
+
+    network = normalize_network(
+        get_value(
+            profile,
+            "network",
+            "net",
+            "type"
+        )
+    )
+
+    if network:
+        query["type"] = network
+
+
+    security = normalize_security(
+        get_value(
+            profile,
+            "security",
+            "tls"
+        )
+    )
+
+    if security:
+        query["security"] = security
+
+
+    fields = [
+        "host",
+        "path",
+        "sni",
+        "fp",
+        "alpn",
+        "flow",
+        "serviceName",
+        "authority",
+        "headerType",
+        "pbk",
+        "sid",
+        "spx"
+    ]
+
+
+    for field in fields:
+
+        value = profile.get(field)
+
+        if value:
+
+            query[field] = value
+
+
+    if "insecure" in profile:
+
+        query["allowInsecure"] = (
+            "1"
+            if profile["insecure"]
+            else "0"
+        )
+
+
+    return query
+        
 def profile_to_vless(profile):
 
     server = get_value(
@@ -276,7 +397,9 @@ def extract_json_profiles(text):
 
             if not isinstance(profile, dict):
                 continue
-
+                
+            if profile.get("configType") != 5:
+                continue
 
             config = profile_to_vless(
                 profile
