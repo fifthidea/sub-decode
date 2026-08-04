@@ -473,7 +473,7 @@ def profile_to_vless(profile):
     )
 
 
-    if not server or not port or not uuid:
+    if not server or not port or not user_id:
         return None
 
 
@@ -743,7 +743,7 @@ def extract_json_objects(text):
 
     return objects
     
-def extract_json_profiles(text):
+def extract_json_profiles(text, json_stats):
 
     configs = []
 
@@ -854,16 +854,16 @@ def extract_json_profiles(text):
                 configs.append(config)
                 
                 if config_type == 5:
-                    stats["json_vless"] += 1
+                    json_stats["json_vless"] += 1
 
                 elif config_type == 6:
-                    stats["json_trojan"] += 1
+                    json_stats["json_trojan"] += 1
 
                 elif config_type == 1:
-                    stats["json_vmess"] += 1
+                    json_stats["json_vmess"] += 1
 
                 elif config_type == 3:
-                    stats["json_ss"] += 1
+                    json_stats["json_ss"] += 1
 
 
     return configs
@@ -925,6 +925,14 @@ def extract_v2ray_urls(active_channels):
 
     channel_counts = {}
 
+    json_stats = {
+        "json_vless": 0,
+        "json_trojan": 0,
+        "json_vmess": 0,
+        "json_ss": 0,
+        "json_unsupported": 0
+    }
+
     for txt in get_output_files():
         
         channel_id = txt.name.split("_", 1)[0]
@@ -953,7 +961,10 @@ def extract_v2ray_urls(active_channels):
 
         urls = URL_PATTERN.findall(text)
 
-        json_configs = extract_json_profiles(text)
+        json_configs = extract_json_profiles(
+            text,
+            json_stats
+        )
         
         if "{" in text or "[" in text:
             print("JSON-like content detected in:", txt.name)
@@ -965,7 +976,7 @@ def extract_v2ray_urls(active_channels):
 
         configs.extend(json_configs)
 
-    return configs, channel_counts
+    return configs, channel_counts, json_stats
 
 def deduplicate_configs(configs):
 
@@ -1216,7 +1227,7 @@ async def main():
     for file in decoded_files:
         print(file.name)
 
-    v2ray_configs, channel_counts = extract_v2ray_urls(
+    v2ray_configs, channel_counts, json_stats = extract_v2ray_urls(
         active_channels
     )
 
@@ -1315,6 +1326,7 @@ async def main():
             "raw_configs_found": raw_count,
             "duplicates_removed": duplicates_removed,
             "configs_found": len(v2ray_configs),
+            "json_breakdown": json_stats,
             "runtime_seconds": round(
                 time.time() - start,
                 2
