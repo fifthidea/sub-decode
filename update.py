@@ -73,8 +73,8 @@ CHANNELS = {
 
 SUPPORTED_EXTENSIONS = {
     ".npvt",
-    ".nm",
-    ".netmod",
+    #".nm",
+    #".netmod",
     ".dark",
     ".ehi",
     ".hat"
