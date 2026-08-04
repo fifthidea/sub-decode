@@ -1,6 +1,6 @@
 # V2ray subscriptions generator but from encrypted config files (NPVT, NM, etc)
 
-Workflow runs, Telegram channels scanned and files get downloaded using Telethon, files get decoded using Pantegnos and v2ray configs get written into `decoded.txt` and `parsed.txt`
+Workflow runs, Telegram channels scanned and files get downloaded using Telethon, files get decoded using `pantegnos` and v2ray configs get written into `decoded.txt` and `parsed.txt`
 
 ## Decoded files
 
