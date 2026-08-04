@@ -56,9 +56,8 @@ URL_PATTERN = re.compile(
     re.IGNORECASE
 )
 
-JSON_ARRAY_PATTERN = re.compile(
-    r"\[\s*\{.*?\}\s*\]",
-    re.DOTALL
+JSON_START_PATTERN = re.compile(
+    r"[\{\[]"
 )
 
 CHANNELS = {
@@ -200,6 +199,15 @@ def profile_to_vless(profile):
     if profile.get("flow"):
         query["flow"] = profile["flow"]
 
+    if profile.get("publicKey"):
+        query["pbk"] = profile["publicKey"]
+
+    if profile.get("shortId"):
+        query["sid"] = profile["shortId"]
+
+    if profile.get("spiderX"):
+        query["spx"] = profile["spiderX"]
+
     if profile.get("serviceName"):
         query["serviceName"] = profile["serviceName"]
 
@@ -227,24 +235,59 @@ def profile_to_vless(profile):
         f"#{quote(remark)}"
     )
         
-def extract_json_profiles(text):
+def extract_json_objects(text):
 
-    configs = []
+    objects = []
 
-    matches = JSON_ARRAY_PATTERN.findall(text)
+    decoder = json.JSONDecoder()
 
-    for match in matches:
+
+    for match in JSON_START_PATTERN.finditer(text):
 
         try:
 
-            data = json.loads(match)
+            obj, end = decoder.raw_decode(
+                text[match.start():]
+            )
+
+            objects.append(obj)
+
 
         except Exception:
 
             continue
 
 
-        for item in data:
+    return objects
+    
+def extract_json_profiles(text):
+
+    configs = []
+
+
+    json_objects = extract_json_objects(text)
+
+
+    for data in json_objects:
+
+
+        if isinstance(data, list):
+
+            items = data
+
+
+        elif isinstance(data, dict):
+
+            items = [data]
+
+
+        else:
+
+            continue
+
+
+        for item in items:
+
 
             if not isinstance(item, dict):
                 continue
@@ -254,21 +297,24 @@ def extract_json_profiles(text):
                 continue
 
 
-            profile = item.get("v2rayProfile")
+            profile = item.get(
+                "v2rayProfile"
+            )
+
 
             if not isinstance(profile, dict):
                 continue
 
 
-            if profile.get("configType") != 5:
-                continue
+            config = profile_to_vless(
+                profile
+            )
 
-
-            config = profile_to_vless(profile)
 
             if config:
 
                 configs.append(config)
+
 
     return configs
         
