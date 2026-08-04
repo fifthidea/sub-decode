@@ -455,21 +455,94 @@ def extract_json_objects(text):
 
     decoder = json.JSONDecoder()
 
+    tried = set()
 
-    for match in JSON_START_PATTERN.finditer(text):
+
+    def try_parse(value):
+
+        value = value.strip()
+
+        if not value:
+            return
+
+        if value in tried:
+            return
+
+        tried.add(value)
 
         try:
-
-            obj, end = decoder.raw_decode(
-                text[match.start():]
+            objects.append(
+                json.loads(value)
             )
 
-            objects.append(obj)
-
-
         except Exception:
+            pass
+
+
+    raw = text.lstrip("\ufeff")
+
+
+    try_parse(raw)
+
+
+    first = re.search(
+        r"[\{\[]",
+        raw
+    )
+
+
+    if first:
+        try_parse(
+            raw[first.start():]
+        )
+
+
+    start = -1
+    depth = 0
+    in_string = False
+    escape = False
+
+
+    for i, ch in enumerate(raw):
+
+        if in_string:
+
+            if escape:
+                escape = False
+
+            elif ch == "\\":
+                escape = True
+
+            elif ch == '"':
+                in_string = False
 
             continue
+
+
+        if ch == '"':
+            in_string = True
+
+        elif ch in "[{":
+
+            if depth == 0:
+                start = i
+
+            depth += 1
+
+
+        elif ch in "]}":
+
+            if depth > 0:
+
+                depth -= 1
+
+                if depth == 0 and start >= 0:
+
+                    try_parse(
+                        raw[start:i+1]
+                    )
+
+                    start = -1
 
 
     return objects
@@ -652,6 +725,9 @@ def extract_v2ray_urls(active_channels):
         urls = URL_PATTERN.findall(text)
 
         json_configs = extract_json_profiles(text)
+        
+        if "{" in text or "[" in text:
+            print("JSON-like content detected in:", txt.name)
 
         stats["url_configs"] += len(urls)
         stats["json_configs"] += len(json_configs)
