@@ -94,3 +94,5 @@ ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206YU1WQ0J2eHVyY3VLNG9Cd2JUeURkaGRiYm44YTRzTkh
 vless://5d0206d9-fb42-4c8b-a84b-3d95ab0f42c7@109.73.196.160:2200?encryption=none&type=ws&host=rzd.ru&path=%2Fv1&allowInsecure=1#%40horizonvpnn
 vless://2c66d559-9889-45c5-a712-d8b7a31fa04d@104.171.135.186:4100?encryption=none&type=ws&host=live.ok.ru&path=%2Fv1&allowInsecure=1#%40horizonvpnn
 vless://c04e959d-3b7a-4d4f-881a-935762102704@www.zsu.gov.ua:8880?encryption=none&type=ws&host=super-darkness-5bfb.298-142.workers.dev&path=%2Fpyip%3DProxyIP.US.CMLiussss.net&allowInsecure=1#%40horizonvpnn
+trojan://cm6g5kusq2isg7nf@216.24.57.250:443?encryption=none&type=xhttp&security=tls&host=b00rn4-b00rn4.n4d3r.org&path=%2F41121%2Fgoogle.com&allowInsecure=0#%F0%9D%98%BE%F0%9D%99%84%F0%9D%99%91%F0%9D%98%BC%F0%9D%99%93%20%28FRC%29%20%F0%9F%87%AB%F0%9F%87%B7
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvOTE3dXZwM2pXSU1reTV1@20.123.9.48:443#%40proxytmproxy%F0%9F%87%AE%F0%9F%87%AA%20%40%200806-8
