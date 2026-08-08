@@ -71,7 +71,6 @@ vless://dbcc7cef-7c3a-4eb8-905b-37783abcea1d@82.158.120.149:443?encryption=none&
 vless://dbcc7cef-7c3a-4eb8-905b-37783abcea1d@82.158.120.149:4433?encryption=none&type=tcp&host=icloud.com&path=%2F&headerType=http&allowInsecure=1#2%E2%9A%A1%EF%B8%8FMXGRiD-join
 vless://dbcc7cef-7c3a-4eb8-905b-37783abcea1d@82.158.120.149:8443?encryption=none&type=tcp&security=reality&sni=icloud.com&pbk=xF3mb1NI-enY36nLv7-SxPjpN43qxV3t38J3hCKo01w&sid=6d546a&spx=%2F6b40e1ed422ef8b&allowInsecure=1#1%E2%9A%A1%EF%B8%8FMXGRiD-join
 vless://43b70fc0-99cc-0004-acd0-88e98418953d@192.142.12.175:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY&security=reality&sid=1c3e8241a8743df9&sni=diffoscope.com&type=tcp#@VASLBOX%F0%9F%AA%9D
-vless://fa0aa0ba-3117-46de-8ce3-0fe621945653@xn--zn-gpa36i.paydar.site:443?encryption=none&type=tcp&host=play.google.com&headerType=http&allowInsecure=1#%40proxytmproxy%F0%9F%87%A9%F0%9F%87%AA%40%20%D9%87%D9%85%D9%87%20%D8%A7%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%F0%9F%9A%80
 vless://c65d6f2f-b082-4e3d-8f4a-c3742487779d@165.245.216.102:18509?encryption=none&security=none&type=tcp#YektaCloud%20%F0%9F%A7%80
 vless://be087559-91dc-4fd9-8493-0fe1d73fb550@46.101.216.38:21020?encryption=none&security=none&type=tcp#YektaCloud%20%F0%9F%A7%80
 vless://d550a7cb-3a70-4b1a-8321-79347439f2a3@139.59.188.186:47063?encryption=none&security=none&type=tcp#YektaCloud%20%F0%9F%A7%80
