@@ -1,4 +1,3 @@
-vless://13efddd3-1a20-49f3-bbbe-f5b530398bb6@tur.barcodegate.com.tr:42695?encryption=none&security=none&type=xhttp#@biosye0
 vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?alpn=h2&encryption=none&fp=firefox&security=tls&sni=static.lotussec.com&type=xhttp#fda-2
 vless://d61e3f31-b011-4ed8-8a70-3baab8e01050@chatgpt.com:2053?encryption=none&type=ws&security=tls&host=fr.roomode.ir&path=%2F&sni=fr.roomode.ir&allowInsecure=0#%40%F0%9D%91%B4%F0%9D%91%AC%F0%9D%91%BB%F0%9D%91%B0_%F0%9D%91%BD%F0%9D%91%B7%F0%9D%91%B5%20%E2%9A%A1
 vless://dd27d33e-ca03-4bd5-9149-66bca334bf5a@frip.roomode.ir:2023?encryption=none&type=tcp&security=reality&sni=yahoo.com&headerType=none&pbk=umnplE-jI6UE57sJFWRA1BHNLbVlpQsM5sbhQIDOiVc&sid=d6a18aaf6b1648e4&allowInsecure=1#%40%F0%9D%91%B4%F0%9D%91%AC%F0%9D%91%BB%F0%9D%91%B0_%F0%9D%91%BD%F0%9D%91%B7%F0%9D%91%B5%20%E2%9A%A1
