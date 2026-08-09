@@ -53,3 +53,4 @@ vless://477f7f9e-ac21-462d-b442-b3bdeb7ace84@ukd.selintech.ir:2082?encryption=no
 vless://477f7f9e-ac21-462d-b442-b3bdeb7ace84@frd.selintech.ir:2086?encryption=none&host=Frd.selintech.ir&path=%2Ffrd&security=none&type=httpupgrade#YektaCloud%20%F0%9F%A7%8A%20%E2%80%A22%E2%80%A2
 vless://477f7f9e-ac21-462d-b442-b3bdeb7ace84@swc.selintech.ir:2052?encryption=none&host=Swc.selintech.ir&path=%2Fhtt&security=none&type=httpupgrade#YektaCloud%20%F0%9F%A7%8A%20%E2%80%A24%E2%80%A2
 vless://477f7f9e-ac21-462d-b442-b3bdeb7ace84@samdata.softupdl.ir:34763?encryption=none&security=none&type=tcp#YektaCloud%20%F0%9F%A7%8A%20%E2%80%A26%E2%80%A2
+vless://28d0edc6-93c9-4465-bac9-720274d8b8c4@201.51.1.11:40443?encryption=none&flow=xtls-rprx-vision&pbk=WRveYv8IuUyvai4jgnQ6nWCL971-wKboe8evES5arlg&security=reality&sid=69d4&sni=deepl.com&type=tcp#@spinovpn%F0%9F%A6%95%F0%9F%8F%82%F0%9F%8F%BB%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%D9%88%D9%88
