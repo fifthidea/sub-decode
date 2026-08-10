@@ -25,3 +25,5 @@ trojan://MITIVPN@104.21.5.155:443?allowInsecure=1&alpn=http%2F1.1&fp=chrome&host
 vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?alpn=h2&encryption=none&fp=firefox&security=tls&sni=static.lotussec.com&type=xhttp#@VASLBOX%F0%9F%AA%BD%2012
 vless://832e0199-9614-4d74-a7ba-1dca5453dab5@204.168.196.173:6985?encryption=none&security=none&type=tcp#@VASLBOX%F0%9F%AA%BD%208
 vless://a3b55d3d-503a-49b9-991d-652958860ac3@chaishop.athforce.ir:38559?encryption=none&type=httpupgrade&host=filimo2.athforce.ir&path=%2F&allowInsecure=1#%40Nexus_Panell%20%DA%86%D9%86%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
+vless://28d0edc6-93c9-4465-bac9-720274d8b8c4@201.51.1.11:40443?encryption=none&flow=xtls-rprx-vision&pbk=WRveYv8IuUyvai4jgnQ6nWCL971-wKboe8evES5arlg&security=reality&sid=69d4&sni=deepl.com&type=tcp#@spinovpn%F0%9F%A6%95%F0%9F%8F%82%F0%9F%8F%BB%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%D9%88%D9%88
+vless://4d10c997-4781-4cd9-82c3-15453523e12c@172.66.44.97:443?encryption=none&path=%2Fsg-melbi&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws#@config5G%F0%9F%91%8D
