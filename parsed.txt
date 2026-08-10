@@ -229,3 +229,4 @@ vless://e4514801-0d5a-42ba-869f-39bd605aef9e@63.178.105.116:22223?encryption=non
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@63.178.105.116:22224?encryption=none&type=tcp&headerType=none&allowInsecure=1#%E2%98%98%EF%B8%8F%40Config0plus-3%F0%9F%87%B0%F0%9F%87%BF
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@18.153.84.121:22222?encryption=none&type=tcp&headerType=none&allowInsecure=1#%E2%98%98%EF%B8%8F%40Config0plus-2%F0%9F%87%B2%F0%9F%87%A9
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@18.153.84.121:22223?encryption=none&type=tcp&headerType=none&allowInsecure=1#%E2%98%98%EF%B8%8F%40Config0plus-1%F0%9F%87%B1%F0%9F%87%B0
+vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.37.228:443?encryption=none&type=ws&security=tls&host=hhlfy.twiladaphne.ndjp.net&path=%2Ffp&sni=hhlfy.twiladaphne.ndjp.net&allowInsecure=0#%40Lent_Gc
