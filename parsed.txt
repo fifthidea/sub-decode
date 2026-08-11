@@ -190,3 +190,4 @@ ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@158.173.20.208:443#%40horizonvpnn
 ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3@172.245.235.84:2375#%40horizonvpnn
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@141.98.101.182:443#%40horizonvpnn
 vless://adce7c2a-3191-49ae-b61c-9b8258ea1b0e@89.208.113.16:443?encryption=none&type=tcp&headerType=none&allowInsecure=1#Join%C2%BB%20%40Lent_Gc
+vless://81e1c4c4-961b-485a-b1cc-eedce72700f3@h.telewebion.ir.varzesh3.com.de:443?encryption=none&type=tcp&security=reality&host=updates.cdn-apple.com&sni=updates.cdn-apple.com&alpn=http%2F1.1&flow=xtls-rprx-vision&headerType=none&pbk=JtA0d5K6Jnmg35oWP9SDOsc1ceuqaxOsNg33fiPHJQs&sid=e915&allowInsecure=1#%D8%B3%D8%B1%D9%88%DB%8C%D8%B3%20Vip%20%D8%AA%DA%A9%20%D9%84%D9%88%DA%A9%DB%8C%D8%B4%D9%86%20%F0%9F%91%88confing_star1
