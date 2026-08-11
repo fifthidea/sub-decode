@@ -189,3 +189,4 @@ ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@141.98.101.181:443#%40horizonvpnn
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@158.173.20.208:443#%40horizonvpnn
 ss://YWVzLTI1Ni1nY206ZmFCQW9ENTRrODdVSkc3@172.245.235.84:2375#%40horizonvpnn
 ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M@141.98.101.182:443#%40horizonvpnn
+vless://adce7c2a-3191-49ae-b61c-9b8258ea1b0e@89.208.113.16:443?encryption=none&type=tcp&headerType=none&allowInsecure=1#Join%C2%BB%20%40Lent_Gc
