@@ -1,20 +1,20 @@
 {
     "summary": {
         "channels": 2,
-        "files_downloaded": 99,
-        "url_configs": 346,
-        "json_configs": 421,
-        "raw_configs_found": 767,
-        "duplicates_removed": 468,
-        "configs_found": 299,
+        "files_downloaded": 104,
+        "url_configs": 367,
+        "json_configs": 432,
+        "raw_configs_found": 799,
+        "duplicates_removed": 491,
+        "configs_found": 308,
         "json_breakdown": {
-            "json_vless": 239,
-            "json_trojan": 128,
+            "json_vless": 248,
+            "json_trojan": 130,
             "json_vmess": 0,
             "json_ss": 54,
             "json_unsupported": 20
         },
-        "runtime_seconds": 16.24
+        "runtime_seconds": 16.2
     },
     "-1001235816045": {
         "files_found": 49,
@@ -26,12 +26,12 @@
         "active": true
     },
     "-1003613216743": {
-        "files_found": 50,
-        "files_downloaded": 50,
-        "url_configs": 200,
-        "json_configs": 247,
-        "configs_found": 447,
-        "last_file_date": "1405-05-22 00:12:31",
+        "files_found": 55,
+        "files_downloaded": 55,
+        "url_configs": 221,
+        "json_configs": 258,
+        "configs_found": 479,
+        "last_file_date": "1405-05-22 00:28:16",
         "active": true
     }
 }
