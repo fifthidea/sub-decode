@@ -1,4 +1,3 @@
-vless://05a522cb-3f52-4bba-b240-9e979f0cb28d@178.83.45.207:42801?encryption=none&type=tcp&security=reality&sni=www.amazon.com&pbk=4UV2O8HhqI1RCYZbgixgoxzpwJI_Zjk2XjVJ-aE_LDA&sid=6e455262a02a&spx=%2F&allowInsecure=1#amirpc
 vless://4038f946-bd95-5505-a111-196c05d6d92f@92.42.96.240:443?encryption=none&type=ws&security=tls&host=mAhaNrEaliteAm.MaHkHan.iR&path=%2F&sni=mAhaNrEaliteAm.MaHkHan.iR&allowInsecure=0#%40tootffarangi%F0%9F%8D%93-73
 vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?encryption=none&type=xhttp&security=tls&host=dey.lnmarketplace.net&path=%2Fkavir&sni=dey.lnmarketplace.net&alpn=h2&allowInsecure=0#%40tootffarangi%F0%9F%8D%93-72
 vless://1ee1f28d-4975-4d7c-95c7-76172c20eed5@185.143.233.238:2086?encryption=none&type=ws&host=parsi.parsi.sbs&path=%2F&allowInsecure=1#%40tootffarangi%F0%9F%8D%93-71
