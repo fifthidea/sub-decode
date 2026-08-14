@@ -443,3 +443,5 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6UlpOQnN6WXlXbzU@51.77.225.200:8388#%40horiz
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyU2VZY2lnX1hCeThxM2szM05wSzNB@65.109.215.118:1080#%40horizonvpnn
 vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?encryption=none&type=xhttp&security=tls&path=%2FJoin-JavidnamanIran-on-Telegram&alpn=h2&allowInsecure=0#%40horizonvpnn
 vless://269c4c7d-6e37-4c63-9a8f-2f162bd892a3@185.103.100.134:4100?encryption=none&type=ws&host=live.ok.ru&path=%2Fv1&allowInsecure=1#%40horizonvpnn
+vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.37.228:443?encryption=none&type=ws&security=tls&host=hhlfy.twiladaphne.ndjp.net&path=%2Ffp&sni=hhlfy.twiladaphne.ndjp.net&allowInsecure=0#%40Lent_Gc
+vless://5aafc2be-9348-4dec-b896-f4a91253bbca@202.37.33.80:443?encryption=none&type=ws&security=tls&host=support.zoom.us.yxls.eu.cc&path=%2Fid-tksi%3Fed%3D2048&sni=support.zoom.us.yxls.eu.cc&allowInsecure=0#Join%20%7C%20%40Lent_Gc
