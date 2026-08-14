@@ -587,9 +587,6 @@ vless://05caca6c-9e97-4c0f-8edf-7b88a6e572c5@mypanel.unixzone.us:12068?encryptio
 vless://e7961655-9674-4cbd-a36f-ec0d5d7d660c@one-for-all.levikogjgfdd.ir:2053?encryption=none&type=ws&security=tls&host=po.fastbrokencompony.com&path=%2F&sni=po.fastbrokencompony.com&alpn=h3%2Ch2&allowInsecure=1#v2ray_Mammad
 vless://e7961655-9674-4cbd-a36f-ec0d5d7d660c@one-for-all.levikogjgfdd.ir:2053?encryption=none&type=ws&security=tls&host=po.fastbrokencompony.com&path=%2F&sni=po.fastbrokencompony.com&alpn=h3%2Ch2&allowInsecure=1#%40v2ray_Mammad
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCcW5xVG9paDBQYlU@51.255.13.232:8388#%40v2ray_Mammad
-vless://be05ba00-b558-494e-ad92-61ed17854787@myrt7rt8e5w5gfdfEerh8.maral-pc.site:442?encryption=none&security=none&type=tcp#bistodo%F0%9F%8C%8D
-vless://4c7a9e12-b3bc-49b0-a8b3-9281fb488620@185.226.93.224:8080?encryption=none&security=none&type=tcp#bistodo%F0%9F%92%98
-vless://813a6313-1358-402b-b76d-144ac63bd228@varzesh3.com:80?encryption=none&host=api.sobhan.cam&path=%2F&security=none&type=ws#bistodo%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB
 vless://5aafc2be-9348-4dec-b896-f4a91253bbca@202.37.33.80:443?encryption=none&type=ws&security=tls&host=support.zoom.us.yxls.eu.cc&path=%2Fid-tksi%3Fed%3D2048&sni=support.zoom.us.yxls.eu.cc&allowInsecure=0#%40Lent_Gc
 vless://05caca6c-9e97-4c0f-8edf-7b88a6e572c5@mypanel.unixzone.us:12068?encryption=none&type=ws&host=mypanel.unixzone.us&path=%2F&allowInsecure=1#%40Lent_Gc%20%20%F0%9F%91%88%F0%9F%8F%BB%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
 vless://5aafc2be-9348-4dec-b896-f4a91253bbca@202.37.33.80:443?encryption=none&path=%2Fid-tksi%3Fed%3D2048&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws#@VASLBOX%F0%9F%92%92%201
