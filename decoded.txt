@@ -582,9 +582,8 @@ trojan://AE62539071@63.183.239.176:443?fp=chrome&security=tls&sni=proper-marlin.
 trojan://7d8e6db4-96cc-4710-afc0-619edde2d7a1@160.16.110.77:55682?security=tls&sni=t11.qifei.app&type=tcp#95%20-%20@JoonVPN%20%F0%9F%AB%A6
 trojan://AE62539071@13.158.137.73:443?fp=chrome&security=tls&sni=novel-bat.rooster465.autos&type=tcp#95%20-%20@JoonVPN%20%F0%9F%AB%A6
 vless://da4747a6-be0d-4c1b-90f4-d82ec3012be2@104.18.1.1:2053?alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&fp=ios&path=%2F&security=tls&sni=music1000.melobitmusic1.ir&type=ws#95%20-%20@JoonVPN%20%F0%9F%AB%A6
-vless://1dcd62c6-00a5-43fe-9199-44fea2294554@pro.mehdimlk845.ir:443?alpn=h2%2Chttp%2F1.1&encryption=mlkem768x25519plus.native.0rtt.A8gr5v4yPmphrHDW7elMSWpigVSHzAlLFwNOIfyd-xw&fp=chrome&security=tls&sni=pro.mehdimlk845.ir&type=tcp#@provvpn
-vless://5aafc2be-9348-4dec-b896-f4a91253bbca@202.37.33.80:443?encryption=none&path=%2Fid-tksi%3Fed%3D2048&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws#@VASLBOX%F0%9F%8E%81
 vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?alpn=h2&encryption=none&fp=firefox&security=tls&sni=static.lotussec.com&type=xhttp#@spinovpn%F0%9F%A6%95%F0%9F%90%9D%D8%AC%D9%88%DB%8C%D9%86%20%D9%84%D8%B7%D9%81%D8%A7%D8%A7%D8%A7
+vless://5aafc2be-9348-4dec-b896-f4a91253bbca@202.37.33.80:443?encryption=none&path=%2Fid-tksi%3Fed%3D2048&security=tls&sni=support.zoom.us.yxls.eu.cc&type=ws#@VASLBOX%F0%9F%8E%81
 vless://be05ba00-b558-494e-ad92-61ed17854787@myrt7rt8e5w5gfdfEerh8.maral-pc.site:442?encryption=none&security=none&type=tcp#bistodo%F0%9F%8C%8D
 vless://4c7a9e12-b3bc-49b0-a8b3-9281fb488620@185.226.93.224:8080?encryption=none&security=none&type=tcp#bistodo%F0%9F%92%98
 vless://813a6313-1358-402b-b76d-144ac63bd228@varzesh3.com:80?encryption=none&host=api.sobhan.cam&path=%2F&security=none&type=ws#bistodo%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB
