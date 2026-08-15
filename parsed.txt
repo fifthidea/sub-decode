@@ -482,3 +482,4 @@ ss://YWVzLTI1Ni1nY206WEtGS2wyclVMaklwNzQ@185.226.172.8:8008#%40horizonvpnn
 ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M@92.118.205.211:5600#%40horizonvpnn
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplRGZON1NPRFFjZUlPbUlBYnRKSnRL@198.98.53.130:443#%40horizonvpnn
 vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?encryption=none&type=xhttp&security=tls&path=%2FJoin-JavidnamanIran-on-Telegram&alpn=h2&allowInsecure=0#J%40Lent_Gc%20%F0%9F%91%88%F0%9F%8F%BC
+vless://8ca5042f-326a-3178-2e58-73fb881896bb@rvg-production-72f2.up.railway.app:443?encryption=none&type=xhttp&security=tls&host=rvg-production-72f2.up.railway.app&path=%2Fxhttp-siz10%2Fstream-up%2F8ca5042f-326a-3178-2e58-73fb881896bb&sni=rvg-production-72f2.up.railway.app&alpn=h2%2Chttp%2F1.1&allowInsecure=1#RVG-MRvpn77a
