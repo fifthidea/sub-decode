@@ -323,3 +323,4 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNi1NU3Ntd3FWNDk3YXRaMmRuZ3F5SmVnZDJrVDZnZg@
 ss://YWVzLTEyOC1nY206T2JCSmd2SHdILUJnNW5SZTBaZS1fZw@zeenvio.ir:1080#t.me/provvpn%C2%B2%F0%9F%87%A9%F0%9F%87%AA
 vless://25f3beef-a4b6-40bc-aa74-17a0f89f683c@finite-node.rtxconfigz.com:443?encryption=none&type=ws&security=tls&host=telegram.us&path=%2F&sni=finite-node.rtxconfigz.com&allowInsecure=0#t.me/provvpn%C2%B9%F0%9F%87%A9%F0%9F%87%AA
 vless://1dcd62c6-00a5-43fe-9199-44fea2294554@pro.mehdimlk845.ir:443?alpn=h2%2Chttp%2F1.1&encryption=mlkem768x25519plus.native.0rtt.A8gr5v4yPmphrHDW7elMSWpigVSHzAlLFwNOIfyd-xw&fp=chrome&security=tls&sni=pro.mehdimlk845.ir&type=tcp#@provvpn
+vless://e97ab92c-6067-44d8-a8ea-c8c07d33e99a@159.89.111.250:12899?encryption=none&security=none&type=tcp#%D9%85%D8%B2%D8%B1%D8%B9%D9%87%20%DA%A9%D8%A7%D8%AC%201
