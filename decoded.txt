@@ -141,3 +141,7 @@ vless://e0454af2-6fe9-4983-a55d-05e1da202602@netherholan-90.horlutr.ir:2087?encr
 vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?encryption=none&type=xhttp&security=tls&host=dey.lnmarketplace.net&path=%2Fkavir&sni=dey.lnmarketplace.net&alpn=h2&allowInsecure=0#%40horizonvpnn
 vless://5a0eb1a2-0e0b-4a93-81e8-1b929c7d72dc@213.156.152.68:4433?encryption=none&type=tcp&host=icloud.com&path=%2F&headerType=http&allowInsecure=1#2%E2%9A%A1%EF%B8%8F%40MXGRiD-join
 vless://5a0eb1a2-0e0b-4a93-81e8-1b929c7d72dc@213.156.152.68:443?encryption=none&type=tcp&security=tls&sni=kwpwaof05db5.2prax.com&allowInsecure=1#1%E2%9A%A1%EF%B8%8F%40MXGRiD-join
+vless://afd63042-1c62-472f-9b56-5904d71e44d1@de.trxlnsnet.ir:8443?encryption=none&security=none&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%20%7C%20Tel:@iranvasli
+vless://afd63042-1c62-472f-9b56-5904d71e44d1@au.trxlnsnet.ir:8443?encryption=none&security=none&type=tcp#%F0%9F%87%A6%F0%9F%87%BA%20%7C%20Tel:@iranvasli
+vless://afd63042-1c62-472f-9b56-5904d71e44d1@104.18.153.188:2083?allowInsecure=1&encryption=none&security=tls&sni=nl-cdn.trxlnsnet.ir&type=xhttp#%F0%9F%87%B3%F0%9F%87%B1%20%7C%20Tel:@iranvasli
+vless://afd63042-1c62-472f-9b56-5904d71e44d1@nl.trxlnsnet.ir:8443?encryption=none&security=none&type=tcp#%F0%9F%87%AB%F0%9F%87%AE%20%7C%20Tel:@iranvasli
