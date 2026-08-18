@@ -108,3 +108,4 @@ vless://86c50e3a-5b87-49dd-bd20-03c7f2735e40@104.16.148.244:2095?encryption=none
 ss://YWVzLTI1Ni1nY206MWVhZGQ0ZTRhMzdiNjYwMQ@45.8.158.176:10801#%40horizonvpnn
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.201:8080#%40horizonvpnn
 vless://0cf41415-ae35-40f9-9218-d72c441c13cb@31.210.52.113:443?encryption=none&type=xhttp&security=tls&host=potent.tuzvpn.com&path=%2Fassets%2Fbuild%2F_app%2Fimmutable%2Fchunks%2Fstream-one%2F&sni=potent.tuzvpn.com&alpn=h2%2Chttp%2F1.1&allowInsecure=1#spiderv2ray%F0%9F%87%B9%F0%9F%87%B7
+vless://7d74ead5-f1a9-45e5-b12a-a31a6a3a56f1@connecto1.kolman.com.de:8080?encryption=none&type=httpupgrade&host=7.sidin.com.de&path=%2FeQ7EK5s88mh1QkzXKZNxSX4q&sni=7.sidin.com.de&alpn=http%2F1.1&allowInsecure=1#%D9%86%D8%A7%D9%85%D8%AD%D8%AF%D9%88%D8%AF%20%D9%81%D9%82%D8%B7%2099%F0%9F%91%88confing_star1
