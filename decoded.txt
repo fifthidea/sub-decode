@@ -145,3 +145,6 @@ vless://afd63042-1c62-472f-9b56-5904d71e44d1@de.trxlnsnet.ir:8443?encryption=non
 vless://afd63042-1c62-472f-9b56-5904d71e44d1@au.trxlnsnet.ir:8443?encryption=none&security=none&type=tcp#%F0%9F%87%A6%F0%9F%87%BA%20%7C%20Tel:@iranvasli
 vless://afd63042-1c62-472f-9b56-5904d71e44d1@104.18.153.188:2083?allowInsecure=1&encryption=none&security=tls&sni=nl-cdn.trxlnsnet.ir&type=xhttp#%F0%9F%87%B3%F0%9F%87%B1%20%7C%20Tel:@iranvasli
 vless://afd63042-1c62-472f-9b56-5904d71e44d1@nl.trxlnsnet.ir:8443?encryption=none&security=none&type=tcp#%F0%9F%87%AB%F0%9F%87%AE%20%7C%20Tel:@iranvasli
+trojan://RHCyMRXeOBf41ia7WrpJc00EBWZEoJNK@peo2.awexio.ir:2020?security=none&type=tcp#@V2rayNGVPN%20%3E%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86
+vless://0dc18864-cb7d-4d5d-b760-ea928246b640@pro1.awexio.ir:2086?encryption=none&fp=qq&pbk=FdedLVqgh4rCCzYydDap0cmzOuhnw2hdwpj0C4G1sjU&security=reality&sid=b91fc778714c36a6&sni=support-shield.nvidia.nl&type=tcp#@V2rayNGVPN%20%3E%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86
+trojan://RHCyMRXeOBf41ia7WrpJc00EBWZEoJNK@awex1.awexio.ir:2082?fp=qq&pbk=YcE0ofDAVLs0QhEk3Yj5vy2hAqLB67tUVKSGe53prjA&security=reality&sid=52b8b53f2b340356&sni=amp-api-edge.apps.apple.com&type=tcp#@V2rayNGVPN%20%3E%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86
