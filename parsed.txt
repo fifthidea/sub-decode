@@ -76,3 +76,4 @@ vless://f7c25743-140c-4d32-a296-a53bc49682d8@direct-nl.bachidze.com:443?encrypti
 vless://ee41dac0-0734-4a8e-b97b-af3fe3274a4d@104.253.74.148:40658?encryption=none&type=tcp&allowInsecure=1#Spiderv2ray%F0%9F%87%B9%F0%9F%87%B7-h185jtj9pa%F0%9F%87%B9%F0%9F%87%B7
 vless://ef01f8c1-e02b-427a-926a-6d3c403c21f2@turkeypnlsaz.mamadhpbot.ir:2052?encryption=none&type=tcp&security=reality&sni=challenges.cloudflare.com&flow=xtls-rprx-vision&headerType=none&pbk=j9Q9dYXmHH92j6hkvspTk1WKYHdMDqFL8C815OHKklI&sid=64b0bc9c3a547a07&allowInsecure=0#%E2%9A%A1%EF%B8%8E%20%40NoxV_shop%20%F0%9F%A6%A6%20%F0%93%8F%BA%20Turkey%20%F0%9F%87%B9%F0%9F%87%B7%20
 vless://85e61293-a014-4d3f-899c-92693e15d48e@104.253.74.148:8080?encryption=none&type=ws&path=%2F&allowInsecure=1#Turkey_spiderv2ray%F0%9F%87%B9%F0%9F%87%B7-9tg2k9qvrd
+vless://a69159ca-4fbc-4b88-b14f-47b6ecfde9b1@45.135.194.211:8443?encryption=none&type=ws&path=%2F&allowInsecure=1#Spiderv2ray%F0%9F%87%B9%F0%9F%87%B7
