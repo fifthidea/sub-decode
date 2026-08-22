@@ -1,9 +1,3 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp5VG5QTXZxUElydkZMVmx5SEh6N0xaY1NBQVVVQVVMOA@167.150.100.81:16853#NpvUp%F0%9F%87%AE%F0%9F%87%B9
-trojan://q-9wViLXkoZWQua9YT7BWoDTC9GQzqR2@167.150.100.81:29842?encryption=none&type=ws&security=none&path=%2Ft3kn1hln5l&headerType=none&allowInsecure=1#NpvUp%F0%9F%87%B9%F0%9F%87%B7
-vless://9e6e7584-2806-4815-b9f9-1388c6c6e38b@167.150.100.81:42347?encryption=none&type=httpupgrade&path=%2Fbzijgpxtkx&headerType=none&allowInsecure=1#NpvUp%F0%9F%87%A8%F0%9F%87%A6
-vless://9e6e7584-2806-4815-b9f9-1388c6c6e38b@167.150.100.81:57218?encryption=none&type=ws&path=%2F040m1kjlez&headerType=none&allowInsecure=1#NpvUp%F0%9F%87%AB%F0%9F%87%B7
-vless://9e6e7584-2806-4815-b9f9-1388c6c6e38b@167.150.100.81:26700?encryption=none&type=grpc&security=reality&sni=www.lovelive-anime.jp&serviceName=3ipkv0lc&headerType=none&pbk=QtyUKmGFPdLW4ugoK2TeGz3-9c-vQXMH6VCf2SfB5EY&sid=57e631ff&allowInsecure=1#NpvUp%F0%9F%87%A9%F0%9F%87%AA
-vless://9e6e7584-2806-4815-b9f9-1388c6c6e38b@167.150.100.81:14151?encryption=none&type=tcp&security=reality&sni=www.lovelive-anime.jp&headerType=none&pbk=p2SN5rBpq43XcQeEw4FvYFrBc5UJ3q8EisRUBjCL5G4&sid=55eebeef&allowInsecure=1#NpvUp%F0%9F%87%AF%F0%9F%87%B5
 vless://ce99a4f9-02a4-4476-d31d-8152b0d999ea@151.101.56.6:443?encryption=none&type=ws&security=tls&host=c12.com&path=%2F&sni=ssl.fastly.com&alpn=h2&allowInsecure=0#%E1%B4%AC%E1%B4%B8%E1%B4%B8%C2%B2%F0%9F%87%AB%F0%9F%87%AE%E2%9E%A3%40JKVPN
 vless://ce99a4f9-02a4-4476-d31d-8152b0d999ea@k2.cloud--vpn.site:443?encryption=none&type=ws&security=tls&host=c12.com&path=%2F&sni=ssl.fastly.com&alpn=h2&allowInsecure=0#%E1%B4%AC%E1%B4%B8%E1%B4%B8%C2%B9%F0%9F%87%AB%F0%9F%87%AE%E2%9E%A3%40JKVPN
 vless://14da77da-4fb3-4e49-ac4f-7881ea19b267@neth6.lckdwn.ru:8443?encryption=none&type=tcp&security=tls&sni=neth6.lckdwn.ru&alpn=h2%2Chttp%2F1.1&headerType=none&allowInsecure=0#%40amir_webstudio%F0%9F%8C%B2
