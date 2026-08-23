@@ -14,7 +14,7 @@
             "json_ss": 110,
             "json_unsupported": 2
         },
-        "runtime_seconds": 27.53
+        "runtime_seconds": 21.81
     },
     "-1001235816045": {
         "files_found": 75,
@@ -31,7 +31,7 @@
         "url_configs": 394,
         "json_configs": 406,
         "configs_found": 800,
-        "last_file_date": "1405-06-02 01:43:34",
+        "last_file_date": "1405-06-02 02:08:59",
         "active": true
     }
 }
