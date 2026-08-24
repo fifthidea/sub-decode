@@ -1,7 +1,7 @@
 {
     "summary": {
         "channels": 2,
-        "files_downloaded": 140,
+        "files_downloaded": 141,
         "url_configs": 440,
         "json_configs": 1000,
         "raw_configs_found": 1440,
@@ -14,7 +14,7 @@
             "json_ss": 109,
             "json_unsupported": 5
         },
-        "runtime_seconds": 30.09
+        "runtime_seconds": 27.02
     },
     "-1001235816045": {
         "files_found": 75,
@@ -26,12 +26,12 @@
         "active": true
     },
     "-1003613216743": {
-        "files_found": 65,
-        "files_downloaded": 65,
+        "files_found": 66,
+        "files_downloaded": 66,
         "url_configs": 350,
         "json_configs": 446,
         "configs_found": 796,
-        "last_file_date": "1405-06-02 05:55:44",
+        "last_file_date": "1405-06-02 07:46:59",
         "active": true
     }
 }
