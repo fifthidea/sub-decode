@@ -370,3 +370,5 @@ vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@104.16.79.73:443?encryption=none&ty
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyS0U1T2NoSHFUcmthbXp4@94.245.92.85:443#%40uonvpn%20%F0%9F%8E%97%EF%B8%8F
 trojan://UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--@199.232.79.166:443?encryption=none&type=xhttp&security=tls&host=shop4.global.ssl.fastly.net&path=%2F&sni=cdn.fastly.com&allowInsecure=0#%40UONVPN
 trojan://UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN--UONVPN@104.253.175.248:41161?encryption=none&type=tcp&security=reality&sni=www.cloudflare.com&headerType=none&pbk=fGiy6GU6FjQXWNzUVpW3gWz3yvrERV8ovGajJc9rgmM&sid=a3f3ba2e&spx=%2Fc986d55f990116e&allowInsecure=1#%40uonvpn
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@89.36.161.222:2096?encryption=none&type=ws&path=%2F&allowInsecure=1#%40Lent_Gc
+vless://0b06f318-ab9d-4de7-8779-360bd5f7ea67@ed8d.wdz.de5.net:443?encryption=none&type=ws&security=tls&path=%2F&allowInsecure=0#%40Lent_Gc

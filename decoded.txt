@@ -572,3 +572,6 @@ vless://a16a3336-c9ab-489f-9b85-c973f5e2cfa4@137.220.221.179:443?encryption=none
 vless://a88e2744-3555-4a0a-9635-0aae23e038f8@45.134.38.204:8051?encryption=none&fp=chrome&pbk=hjJ1VN2xwcl1n7vrwvOspB2NFWrXNySUNPexutOVvAM&security=reality&sid=109754c5259066d1&sni=www.amd.com&spx=%2FOH579QRJEmBinhM&type=tcp#Tel%20:%20@V2RAYENGLISH%F0%9F%94%A5
 vless://e4514801-0d5a-42ba-869f-39bd605aef9e@63.188.101.151:22223?encryption=none&security=none&type=tcp#Tel%20:%20@V2RAYENGLISH%E2%9D%A4%EF%B8%8F
 vless://4d7bc5dd-e670-4985-b23a-10aad921cdb4@62.238.119.6:443?encryption=none&security=none&type=tcp#@Best_internet_iran
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@89.36.161.222:2096?encryption=none&type=ws&path=%2F&allowInsecure=1#%40Lent_Gc
+vless://0b06f318-ab9d-4de7-8779-360bd5f7ea67@ed8d.wdz.de5.net:443?encryption=none&type=ws&security=tls&path=%2F&allowInsecure=0#%40Lent_Gc
+vless://14b48651-3738-4926-bc09-4c04e87ff80b@static.lotussec.com:443?alpn=h2&encryption=none&fp=firefox&security=tls&sni=static.lotussec.com&type=xhttp#@spinovpn%F0%9F%A6%95%F0%9F%9B%9F%D8%AC%D9%88%DB%8C%D9%86%20%D9%84%D8%B7%D9%81%D8%A7%D8%A7%D8%A7
