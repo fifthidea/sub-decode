@@ -32,3 +32,4 @@ vless://9ac5701f-4cf2-4762-be0a-11a7f7e20b90@hardres.hardvezoo.ir:2054?encryptio
 vless://9ac5701f-4cf2-4762-be0a-11a7f7e20b90@hardres.hardvezoo.ir:2056?encryption=none&type=httpupgrade&security=tls&host=www.speedtest.net&path=%2FslInmZE289zR1Kon2W&sni=sbs.hardvezoo.ir&alpn=h2%2Chttp%2F1.1&allowInsecure=0#https%3A//t.me/v2ray_Mammad%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
 vless://603819a3-dd65-408a-abab-15d8dc49887f@142.93.171.28:8880?encryption=none&type=tcp&host=store.steampowered.com&headerType=http&allowInsecure=1#%40v2ray_Mammad%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%A8%D8%AF%DB%8C%D9%86
 vless://603819a3-dd65-408a-abab-15d8dc49887f@142.93.107.234:443?encryption=none&type=tcp&host=store.steampowered.com&headerType=http&allowInsecure=1#%40v2ray_Mammad
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@92.5.228.242:62145?encryption=none&type=tcp&headerType=none&allowInsecure=1#%40shotinet
