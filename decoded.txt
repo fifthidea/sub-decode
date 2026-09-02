@@ -74,6 +74,14 @@ vless://b8ce4ad7-855b-4a09-9f94-f3692a755f69@fiverr.com:443?encryption=none&type
 vless://b8ce4ad7-855b-4a09-9f94-f3692a755f69@surfiran.com:443?encryption=none&type=ws&security=tls&host=footi.dearhossein-taktaz.ir&path=%2F&sni=footi.dearhossein-taktaz.ir&alpn=h2%2Chttp%2F1.1%2Ch3&allowInsecure=1#Hamrah%7Cirancell
 vless://b8ce4ad7-855b-4a09-9f94-f3692a755f69@mahdroo.ir:443?encryption=none&type=ws&security=tls&host=footi.dearhossein-taktaz.ir&path=%2F&sni=footi.dearhossein-taktaz.ir&alpn=h2%2Chttp%2F1.1%2Ch3&allowInsecure=1#Hamrah%7Cirancell
 vless://b8ce4ad7-855b-4a09-9f94-f3692a755f69@parstoday.ir:443?encryption=none&type=ws&security=tls&host=footi.dearhossein-taktaz.ir&path=%2F&sni=footi.dearhossein-taktaz.ir&alpn=h2%2Chttp%2F1.1%2Ch3&allowInsecure=1#Hamrah%7Cirancell-bk9m16ind1
+vless://59241135-5d22-4b88-9b77-52c527ff33ce@151.101.109.223:443?encryption=none&type=ws&security=tls&host=bazaryabab.global.ssl.fastly.net&path=%2F&sni=default.ssl.fastly.net&allowInsecure=1#%40NUFiLTER%2819%29%F0%9F%87%B3%F0%9F%87%B1
+trojan://humanity@www.speedtest.net:443?path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%201
+trojan://humanity@www.speedtest.net:443?path=%2Fassignment&security=tls&sni=www.calmlunch.com&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%202
+vless://0f0b7f69-78e1-4e9e-8b35-0986444613e4@188.114.97.6:443?encryption=none&path=%2F%3Fed%3D2048&security=tls&sni=xwrivr.pages.dev&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%203
+vless://0f0b7f69-78e1-4e9e-8b35-0986444613e4@188.114.97.6:443?encryption=none&path=%2F%3Fed%3D2048&security=tls&sni=btrum.pages.dev&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%204
+vless://6ed49e74-b33b-46af-9b79-ef5e1429bfdf@188.114.97.6:443?encryption=none&path=%2FjSkSOxcaWoPMMU6Mp%3Fed%3D2048&security=tls&sni=holland.fqrrqfevk.top&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%205
+vless://5d8fae5f-0427-4da3-99ab-242905fa5c69@188.114.97.6:443?encryption=none&path=%2F%3Fed%3D2048&security=tls&sni=fast.iqiraq.shop&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%206
+vless://c7e9c591-2764-423a-afca-efbd010fd396@188.114.97.6:443?encryption=none&path=%2F%3Fed%3D2048&security=tls&sni=freeuse.firta.ru&type=ws#XV2RAY%20-%20%F0%9F%A7%91%E2%80%8D%F0%9F%A6%B2%207
 vless://90da514d-8888-4a53-912e-ac2981c8c6ee@188.220.67.140:2087?encryption=none&path=%2F8f2690e2d016&security=none&type=ws#@npvfreeall%F0%9F%92%B8
 vless://e6d369db-22be-4f30-8685-455c717aaa8c@157.22.133.130:2087?encryption=none&path=%2F5021201ef53f&security=none&type=ws#@npvfreeall%F0%9F%8E%AA
 vless://90da514d-8888-4a53-912e-ac2981c8c6ee@188.220.67.181:2087?encryption=none&path=%2F8f2690e2d016&security=none&type=ws#@npvfreeall%F0%9F%8F%A7
