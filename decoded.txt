@@ -159,3 +159,4 @@ vless://bfb3f06c-e33f-41ac-b101-012c8325a689@206.1.96.28:8082?encryption=none&se
 vless://bed0fd7d-7873-4617-8459-edc93a2138cd@46.62.135.67:443?encryption=none&fp=chrome&pbk=1U9eTADaumTYxiO9NifVHUv5mbMowU2NSjgc2rBdvHo&security=reality&sid=7a0300af51a1c4cf&sni=amp-api-edge.apps.apple.com&type=tcp#@FaraGATE%20%F0%9F%95%B8%EF%B8%8F%2011
 vless://bed0fd7d-7873-4617-8459-edc93a2138cd@speedtest.net:80?encryption=mlkem768x25519plus.native.0rtt.I5x90QzhgR5qzYOhEOiCCyc2-UGPAklxRUeMzToNdiY&security=none&type=xhttp#@FaraGATE%20%F0%9F%95%B8%EF%B8%8F%2012
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpnTXZ1T0oyQmh0aldtampY@52.236.93.60:443#@FaraGATE%20%F0%9F%95%B8%EF%B8%8F%2013
+vless://a7f29e8b-137d-4b45-972b-8914a2c6d0c5@holandisgood.weed.butnorwa.better.garqino.ir:11000?encryption=none&security=none&type=tcp#%F0%9F%87%B3%F0%9F%87%B1%20IRANVASLI
