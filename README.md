@@ -55,3 +55,13 @@ How to get those secret values? ask AI. :/
 ## Credits
 
 **FrontierTM** for their awesome **Pantegnos** decoding tool. You can check their Github repo [here](https://github.com/FrontierTM/Pantegnos)
+
+## To Do
+
+add json parsing support for more file types. currently only npvt supported
+
+include more file types
+
+fix workflow errors
+
+
