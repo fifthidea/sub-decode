@@ -1,7 +1,7 @@
 name: Decode configs
 
-#on:
-  #workflow_dispatch: #disabled for now till fix
+on:
+  workflow_dispatch: #broken, needs fix
 
 concurrency:
   group: decode-configs
